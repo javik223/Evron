@@ -1,0 +1,39 @@
+.hero {
+	background: image-url("evron-experience-banner.jpg") no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	min-height: rem-calc(350);
+	//min-height: 65vh;
+	padding-top: $padding * 2;
+	padding-bottom: $padding * 2;
+	display: table;
+	vertical-align: middle;
+
+	@media #{$medium-up} {
+		min-height: 70vh;
+	}
+
+	&-light {
+		* {
+			color: color(white);
+		}
+	}
+
+	&-content {
+		@extend .col;
+		@extend .text-center;
+		float: none;
+		display: table-cell;
+		align: center;
+		vertical-align: middle;
+
+		@media #{$medium-up} {
+			max-width: 50%;
+		}
+	}
+}
+.hero-evron {
+	h1 {
+		text-transform: uppercase;
+	}
+}

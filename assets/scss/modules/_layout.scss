@@ -1,0 +1,26 @@
+.container {
+	position: relative;
+	overflow-y: hidden;
+
+	&-gray {
+		background-color: lighten(color(gray-light), 57%);
+		padding-top: $padding;
+		padding-bottom: $padding;
+
+		@media #{$medium-up} {
+			padding-top: $padding * 2;
+			padding-bottom: $padding * 2;
+		}
+	}
+
+
+	&-extra-pad {
+		padding-top: $padding * 2;
+		padding-bottom: $padding *2;
+
+		@media #{$medium-up} {
+			padding-top: $padding * 4;
+			padding-bottom: $padding * 4;
+		}
+	}
+}

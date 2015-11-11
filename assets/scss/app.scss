@@ -1,0 +1,49 @@
+//Defaults & Framework
+@import 
+	"bourbon",
+	"compass/reset",
+	"framework/global",
+	"framework/settings",
+	"framework/grid";
+
+// Modules
+@import 
+	"modules/colors",
+	"modules/typography",
+	"modules/icons",
+	"modules/lists",
+	"modules/buttons",
+	"modules/forms",
+	"modules/spinner",
+	"modules/fonts",
+	"modules/loader",
+	"modules/layout"
+	;
+
+// Components
+@import 
+	"components/hero"
+	;
+
+
+// Plugins
+
+@import
+	"plugins/owlslider"
+	;
+
+
+// Sections
+
+@import
+	"sections/header",
+	"sections/footer",
+	"sections/general",
+	"sections/homepage",
+	"sections/menu"
+	;
+
+html, body {
+	width: 100%;
+	overflow-x: hidden;
+}

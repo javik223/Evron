@@ -1,0 +1,60 @@
+// Top Bar
+.top-bar {
+	padding: $padding * 0.2;
+	background-color: color(primary);
+	color: color(white);
+	font-size: rem-calc(12);
+
+	@media #{$medium-up} {
+		padding: $padding * 0.5;
+		font-size: rem-calc(13);
+	}
+
+	* {
+		color: color(white);
+		text-decoration: none;
+	}	
+
+	.row, .row-main {
+		> div {
+			display: inline-block;
+		}
+	}
+
+	.right {
+		float: none;
+		text-align: center;
+		margin: auto auto;
+
+		@media #{$medium-up} {
+			float: right;	
+		}
+	}
+
+	.icon {
+		font-size: rem-calc(15);
+		vertical-align: middle;
+		padding-right: $padding * 0.2;
+		position: relative;
+		top: rem-calc(-2);
+
+		@media #{$medium-up} {
+			font-size: rem-calc(18);
+		}
+	}
+
+	a {
+		> span {
+			display: inline-block;
+			margin-left: $padding * 0.2;
+
+			@media #{$medium-up} {
+				margin-left: $padding * 0.5;				
+			}
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

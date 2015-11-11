@@ -1,0 +1,195 @@
+* {
+	box-sizing: border-box;
+}
+.container {
+	width: 100%;
+	max-width: 100% !important;
+	float: left;
+}
+.row {
+	width: 100%;
+	max-width: rem-calc($row-width);
+	margin: auto auto;
+	@include clearfix;
+
+	&-pad {
+		> div {
+			@media #{$medium-up} {
+				padding-right: $padding * 2;
+			}
+		}
+	}
+}
+
+// Modified row
+.row-main {
+	@media #{$medium-up} {
+		width: 100%;
+		margin: auto auto;
+	}
+
+	@media #{$large-up} {
+		width: 90%;
+	}
+}
+.collapse {
+	padding: 0 !important;
+}
+.col {
+	width: 100%;
+	float: left;
+}
+[class*='col-'], [class*='m-']:last-of-type, [class*='s-']:last-of-type {
+	padding-right: $padding;
+}
+[class*='col-']:last-of-type, [class*='m-']:last-of-type, [class*='s-']:last-of-type {
+  padding-right: 0;
+  float: right;
+}
+.end {
+	float: left !important;
+}
+
+@for $i from 0 through $grid-columns {
+	.s-#{$i}-#{$grid-columns} {
+		width: ( $i / $grid-columns ) * 100%;
+		float: left;
+	}
+	.s-offset-#{$i} {
+		margin-left: ( $i / $grid-columns ) * 100%;
+	}
+}
+@media #{$medium-up} {
+	@for $i from 0 through $grid-columns {
+		.m-#{$i}-#{$grid-columns} {
+			width: ( $i / $grid-columns ) * 100%;
+			float: left;
+		}
+		.m-offset-#{$i} {
+			margin-left: ( $i / $grid-columns ) * 100%;
+		}
+	}
+}
+@media #{$large-up} {
+	@for $i from 0 through $grid-columns {
+		.l-#{$i}-#{$grid-columns} {
+			width: ( $i / $grid-columns ) * 100%;
+			float: left;
+		}
+		.l-offset-#{$i} {
+			margin-left: ( $i / $grid-columns ) * 100%;
+		}
+	}
+}
+
+// Alternate grid 10 columns
+// -----------------------------------------------------------------
+
+@for $i from 0 through $grid-columns-alt {
+	.s-#{$i}-#{$grid-columns-alt} {
+		width: ( $i / $grid-columns-alt ) * 100%;
+		float: left;
+	}
+	.s-offset-#{$i} {
+		margin-left: ( $i / $grid-columns-alt ) * 100%;
+	}
+}
+
+@media #{$medium-up} {
+	@for $i from 0 through $grid-columns-alt {
+		.m-#{$i}-#{$grid-columns-alt} {
+			width: ( $i / $grid-columns-alt ) * 100%;
+			float: left;
+		}
+		.m-offset-#{$i} {
+			margin-left: ( $i / $grid-columns-alt ) * 100%;
+		}
+	}
+}
+@media #{$large-up} {
+	@for $i from 0 through $grid-columns-alt {
+		.l-#{$i}-#{$grid-columns-alt} {
+			width: ( $i / $grid-columns-alt ) * 100%;
+			float: left;
+		}
+		.l-offset-#{$i} {
+			margin-left: ( $i / $grid-columns-alt ) * 100%;
+		}
+	}
+}
+
+// -----------------------------------------------------------------
+
+//Extra padding for mobile and tablet
+.m-pad {
+	@media #{$small-only} {
+		padding-left: rem-calc(30);
+		padding-right: rem-calc(30) !important;
+	}
+}
+.mt-pad {
+	@extend .m-pad; 
+
+	@media #{$medium-only} {
+		padding-left: rem-calc(30);
+		padding-right: rem-calc(30) !important;
+	}
+}
+// Padding and Margin Styles
+.pbn {
+	padding-bottom: $padding !important;
+}
+// Small padding bottom
+.pb-small {
+	padding-bottom: $padding !important;
+} 
+// Large Bottom Padding
+.pb-large {
+	padding-bottom: $padding * 2 !important;
+}
+// Remove padding from top
+.pt-0 {
+	padding-top: 0 !important;
+}
+// Remove padding from bottom
+.pb-0 {
+	padding-bottom: 0 !important;
+}
+// Remove margin from bottom
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+// Remove margin from top
+.mt-0 {
+	margin-top: 0 !important;
+}
+.mb-large {
+	margin-bottom: $padding * 2 !important;
+}
+
+// Visibility state on different devices
+// s - mobile, m - tablet, l - larged devices (desktop), sm - mobile and tablet
+.s-hide {
+	@media #{$small-only} {
+		display: none !important;
+	}
+}
+.m-hide {
+	@media #{$medium-only} {
+		display: none;
+	}
+}
+.l-hide {
+	@media #{$large-up} {
+		display: none;
+	}
+}
+.sm-hide {
+	@extend .s-hide;
+	@extend .m-hide;
+}
+.ml-hide {
+	@media #{$medium-up} {
+		display: none;
+	}
+}

@@ -1,0 +1,48 @@
+.list {
+	margin-left: $padding;
+	margin-bottom: $padding * 2;
+}
+.list-dash {
+	li {
+		position: relative;
+		
+		&:before {
+			content: '-';
+			padding-right: $padding * 0.5;
+			margin-left: - $padding;
+			display: inline-block;
+			position: absolute;
+
+		}
+	}
+}
+.list-arrow {
+	margin-left: $padding;
+	
+	li {
+		position: relative;
+		
+		&:before {
+			content: "»";
+			padding-right: $padding;
+			margin-left: - $padding;
+			display: inline-block;
+			position: absolute;
+			font-family: icomoon;
+			color: color(primary);
+
+		}
+	}
+}
+
+.list-experiences {
+	margin-left: 0;
+
+	li {
+		margin-bottom: $padding;
+
+		@media #{$medium-up} {
+			margin-bottom: $padding * 1.5;
+		}
+	}
+}

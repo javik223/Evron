@@ -1,0 +1,163 @@
+
+// Header elements font settings
+$headers: (
+	h1: (fontSize: 48, lineHeight: 52, mFontSize: 48, mLineHeight: 52, sFontSize: 36, sLineHeight: 40),
+	h2: (fontSize: 36, lineHeight: 43, mFontSize: 30, mLineHeight: 38, sFontSize: 24, sLineHeight: 32),
+	h3: (fontSize: 22, lineHeight: 32, mFontSize: 24, mLineHeight: 32, sFontSize: 18, sLineHeight: 28),
+	h4: (fontSize: 18, lineHeight: 30, mFontSize: 20, mLineHeight: 30, sFontSize: 14, sLineHeight: 24),
+	h5: (fontSize: 14, lineHeight: 20, mFontSize: 12, mLineHeight: 16, sFontSize: 12, sLineHeight: 16),
+);
+
+
+@each $elem, $prop in $headers {
+	#{$elem} {
+		font-size: rem-calc(m($prop, sFontSize));
+		line-height: rem-calc(m($prop, sLineHeight));
+		margin-bottom: rem-calc(m($prop, sLineHeight)/2) !important;
+
+		@media #{$medium-up} {
+			font-size: rem-calc(m($prop, mFontSize));
+			line-height: rem-calc(m($prop, mLineHeight));
+			margin-bottom: rem-calc(m($prop, mLineHeight)/2) !important;
+		}
+
+		@media #{$large-up} {
+			font-size: rem-calc(m($prop, fontSize));
+			line-height: rem-calc(m($prop, lineHeight));
+			margin-bottom: rem-calc(m($prop, lineHeight)/2) !important;
+		}
+	}
+}
+body {
+	color: color(gray);
+}
+body, p {
+	font-size: $base-font-size-mobile;
+	line-height: $base-line-height-mobile;
+	font-family: $base-font-family;
+	font-weight: 200;
+	letter-spacing: 0.1px;
+	color: lighten(color(gray-light), 20%);
+
+	@media #{$medium-up} {
+		font-size: $base-font-size;
+		line-height: $base-line-height;
+	}
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+}
+p {
+	margin-bottom: $base-line-height;
+	font-family: $font-family-serif;
+	color: lighten(color(gray-light), 20%);
+}
+strong {
+	font-weight: 700;
+}
+em {
+	font-style: italic;
+}
+.text-center {
+	text-align: center;
+}
+.text-light {
+	font-weight: $font-weight-light;
+}
+.text-small {
+	font-size: 80%;
+	line-height: 1.5;
+}
+.text-serif {
+	font-family: $font-family-serif;
+
+	* {
+		font-family: $font-family-serif;
+	}
+}
+.text-sans {
+	font-family: $font-family-sans-serif;
+
+	* {
+		font-family: $font-family-sans-serif;
+	}
+}
+
+// Font Weights
+.text-bold {
+	font-weight: bold;
+}
+
+// Text Alignment
+.text-center {
+	text-align: center !important;
+}
+.s-text-center {
+	@media #{$small-only} {
+		text-align: center !important;
+	}
+}
+.m-text-center {
+	@media #{$medium-only} {
+		text-align: center !important;
+	}
+}
+.sm-text-center {
+	@extend .s-text-center;
+	@extend .m-text-center;
+}
+
+.text-right {
+	text-align: right !important;
+}
+.s-text-right {
+	@media #{$small-only} {
+		text-align: right !important;
+	}
+}
+.m-text-right {
+	@media #{$medium-only} {
+		text-align: right !important;
+	}
+}
+.l-text-right {
+	@media #{$large-up} {
+		text-align: right !important;
+	}
+}
+
+[class*="-center"] {
+	img {
+		float: none;
+	}
+}
+// Letter spacing
+.text-space-1 {
+	letter-spacing: rem-calc(1);
+}
+// Change text color to primary color
+.c-p {
+	color: color(primary);
+}
+
+//Link styles
+.plain {
+	color: color(primary);
+	text-decoration: none;
+
+	&:hover {
+		color: color(primary, darker);
+	}
+}
+.alpha{
+	@extend h1;
+}
+.beta {
+	@extend h2;
+}
+.gamma {
+	@extend h3;
+}
+.omega {
+	@extend h4;
+}
