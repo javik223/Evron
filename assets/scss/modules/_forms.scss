@@ -1,21 +1,44 @@
 input, 
 textarea {
-	width: 100%;
-	background-color: lighten(color(gray), 20%);
-	padding: $padding * 0.5 $padding;
+	//min-width: rem-calc(300);
+	max-width: 100%;
+	//background-color: lighten(color(gray), 20%);
+	padding: $padding * 0.5 $padding $padding * 0.7;
 	font-size: rem-calc(16);
 	border: none;
-	margin-bottom: $padding * 0.5;
+	color: color(gray-light);
+	//margin-bottom: $padding * 0.5;
 	@include appearance(none);
 	
 	@include placeholder {
 		color: color(black);
 	}
+
+	&.short {
+		min-width: rem-calc(40);
+		text-align: center;
+		padding: $padding * 0.2;
+		font-size: rem-calc(14);
+
+		&:active, &:focus{
+			border-color: color(primary);
+			color: color(primary);
+		}
+	}
+
+	&.with-border {
+		border: rem-calc(1) solid lighten(color(gray-light), 55%);
+		border-radius: rem-calc(50);
+	}
+
+	&:focus, &:active {
+		outline: none;
+	}
 }
-input[type="submit"] {
+/* input[type="submit"] {
 	@extend .button;
 	width: auto;
 	font-weight: 900;
 	cursor: pointer;
 	padding: $padding $padding * 2;
-}
+} */

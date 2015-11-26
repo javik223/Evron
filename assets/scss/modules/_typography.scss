@@ -49,7 +49,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 p {
 	margin-bottom: $base-line-height;
-	font-family: $font-family-serif;
+	//font-family: $font-family-serif;
 	color: lighten(color(gray-light), 20%);
 }
 strong {
@@ -124,6 +124,10 @@ em {
 	@media #{$large-up} {
 		text-align: right !important;
 	}
+}
+.ml-text-right {
+	@extend .m-text-right;
+	@extend .l-text-right;
 }
 
 [class*="-center"] {

@@ -22,7 +22,8 @@
 
 // Components
 @import 
-	"components/hero"
+	"components/hero",
+	"components/product"
 	;
 
 
@@ -40,7 +41,8 @@
 	"sections/footer",
 	"sections/general",
 	"sections/homepage",
-	"sections/menu"
+	"sections/menu",
+	"sections/minicart"
 	;
 
 html, body {

@@ -3,7 +3,7 @@
 	padding: $padding * 0.2;
 	background-color: color(primary);
 	color: color(white);
-	font-size: rem-calc(12);
+	font-size: rem-calc(10);
 
 	@media #{$medium-up} {
 		padding: $padding * 0.5;
@@ -55,6 +55,334 @@
 
 		&:hover {
 			opacity: 0.5;
+		}
+	}
+
+	.links {
+		@media #{$small-only} {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+.header {
+	padding-top: $padding * 0.2;
+	background-color: color(white);
+	position: relative;
+	z-index: 10000;
+	overflow-y: visible;
+	border-bottom: rem-calc(1) solid lighten(color(gray-light), 50%);
+	transform: translate3d(0, 0, 0);
+
+	&.sticky {
+		padding-top: $padding * 0.1;
+		padding-bottom: $padding * 0.1;
+		//transition: all 1s ease-out;
+	}
+
+	.row-main {
+		display: table;
+
+		> div {
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	@media #{$medium-up} {
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+
+	span {
+		display: inline-block;
+		@extend .end;
+	}
+
+	.menu-wrapper {
+		color: color(primary);
+		cursor: pointer;
+		font-weight: bold;
+		line-height: 1.1;
+		position: relative;
+		vertical-align: middle;
+		user-select: none;
+		//margin-top: $padding * 2;
+		//float: left;
+		margin-right: $padding;
+
+		> span {
+			text-transform: uppercase;
+		}
+
+		.side-menu {
+			position: absolute !important;
+			width: rem-calc(325);
+			top: $padding * 5.2;
+			display: none;
+
+			li {
+				padding-top: $padding * 0.3;
+				//padding-bottom: $padding * 0.2;
+				line-height: 1.6;
+			}
+		}
+	}
+
+	.menu {
+		width: rem-calc(30);
+		height: rem-calc(15);
+		border-bottom: rem-calc(3) solid color(primary);
+		position: relative;
+		margin-left: $padding * 0.5;
+		display: inline-block;
+		margin-right: $padding * 0.5;
+
+		@media #{$large-up} {
+			margin-left: 0;
+		}
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			border-bottom: rem-calc(3) solid color(primary);
+		}
+
+		&:after {
+			top: 50%;
+		}
+	}
+
+	.mobile-search-icon {
+		font-weight: bold;
+		color: color(primary);
+		cursor: pointer;
+		font-size: rem-calc(20);
+		padding: $padding;
+		margin: -$padding;
+		margin-left: 0;
+
+		@media #{$medium-up} {
+			display: none !important;
+		}
+	}
+
+	.evron-logo {
+		display: inline-block;
+		margin: auto auto;
+		text-align: center;
+		align: center;
+		padding-right: $padding;
+		//width: 80%;
+
+		@media #{$small-only} {
+			width: 85%;
+		}
+
+		@media #{$medium-up} {
+			//width: 60%;
+		}
+
+		img {
+			float: none;
+		}
+	}
+
+	.account-login {
+		position: relative;
+		float: left;
+		padding-right: $padding * 1.5;
+		margin-right: $padding;
+		border-right: rem-calc(1) solid lighten(color(gray-light), 50%);
+
+		&:after {
+			font-family: 'icomoon';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			margin-right: $padding * 0.5;
+			color: color(primary);
+
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			content: "\e90e";
+			font-size: rem-calc(12);
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+
+		> p {
+			color: color(primary);
+			font-weight: bold;
+			font-size: rem-calc(12);
+			line-height: 1.6;
+
+			/* @media #{$large-up} {
+				font-size: inherit;
+			} */
+		}
+		* {
+			font-size: rem-calc(14);
+			line-height: 1.5;
+		}
+
+		.overlayBtn {
+			display: block;
+			cursor: pointer;
+			padding: $padding;
+			margin: -$padding;
+		}
+
+		.overlay_wrapper {
+			filter: drop-shadow(0px 4px 20px rgba(0,0,0,0.1));
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: auto;
+			max-width: none;
+			//margin-top: rem-calc(15);
+			text-align: left;
+		}
+
+		.overlay {
+			display: none;
+			overflow: hidden;
+
+			// CSS Triangle
+			&:before {
+				content: '';
+				position: absolute;
+				top: rem-calc(-10);
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 15px 20px 15px;
+				border-color: transparent transparent color(white) transparent;
+			}
+
+			ul {
+				border-radius: rem-calc(4);
+				overflow: hidden;
+				background-color: color(white);
+				overflow: hidden;
+				//border: rem-calc(1) solid lighten(color(gray-light), 57%);
+				box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.17);
+				position: relative;
+				z-index: 10000;
+			}
+
+			li {
+				padding: $padding;
+				padding-top: $padding * 0.5;
+				padding-bottom: $padding * 0.5;
+				border-bottom: rem-calc(1) solid lighten(color(gray-light), 57%);
+				background-color: color(white);
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				&:hover {
+					background-color: lighten(color(primary), 57%);
+				}
+			}
+
+			h3 {
+				@extend .mb-0;
+				color: color(primary);
+			}
+
+			h3, p {
+				white-space: nowrap;
+			}
+
+			p {
+				font-size: rem-calc(11);
+				line-height: 1.6;
+				margin-bottom: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+
+	.search_wrapper {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: rem-calc(-80);
+		background-color: color(white);
+		padding-bottom: $padding;
+		padding-top: $padding;
+		
+		@media #{$medium-up} {
+			width: 52%;
+			position: relative;
+			bottom: 0;
+		}
+
+		@media #{$large-up} {
+			width: 42%;			
+		}
+	}
+
+	.search {
+		/* Rectangle 2: */
+		background: color(white);
+		border: rem-calc(1) solid rgba(207,207,207,0.75);
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.17);
+		border-radius: rem-calc(40);
+		float: right;
+		overflow: hidden;
+		width: 90%;
+		margin-right: 5%;
+
+		@media #{$medium-up} {
+			width: 100%;
+			margin-right: 0;
+		}
+
+
+		input[type="text"] {
+			float: left;
+			width: 85%;
+			font-weight: 100;
+
+			&::placeholder {
+				color: lighten(color(gray-light), 40%);
+			}
+
+			@media #{$large-up} {
+				width: 90%;
+			}
+		}
+
+		input[type="button"] {
+			width: 15%;
+			font-family: 'icomoon' !important;
+			text-align: center;
+			padding-left: 0;
+			padding-right: 0;
+			border-left: rem-calc(1) solid lighten(color(gray-light), 50%);
+			background-color: color(white);
+			color: color(primary);
+
+			@media #{$large-up} {
+				width: 10%;
+			}
 		}
 	}
 }

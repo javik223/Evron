@@ -1,0 +1,149 @@
+.product-grid {
+	.product {
+		@extend .col;
+		@extend .s-6-12;
+		@extend .m-4-12;
+		@extend .l-3-12;
+	}
+
+	@media #{$large-up} {
+		padding-left: $padding;
+		padding-right: $padding;
+	}
+}
+.product {
+	border: rem-calc(1) solid lighten(color(gray-light), 55%);
+	border-right: none;
+	border-top: none;
+	position: relative;
+	height: rem-calc(270);
+	overflow: hidden;
+
+	@media #{$small-only} {
+		&:nth-child(2n+1){
+			border-left: none;
+		}
+
+		&:nth-child(2n){
+			border-left: none;
+		}
+	}
+
+	@media #{$medium-up} {
+		border-left: none;
+		border-right: rem-calc(1) solid lighten(color(gray-light), 55%);
+		height: rem-calc(280);	
+
+		&:nth-child(3n) {
+			border-right: none;
+		}
+	}
+
+	@media #{$large-up} {
+		height: rem-calc(330);	
+	}
+
+	&_image {
+		padding-left: $padding * 0.5;
+		padding-right: $padding * 0.5;
+		width: 100%;
+		float: left;
+		text-align: center;
+
+		img {
+			height: rem-calc(140);
+			float: none;
+			text-align: center;
+			width: auto;
+			max-width: none;
+
+			@media #{$large-up} {
+				height: rem-calc(170);
+			}
+		}
+
+		@media #{$medium-up} {
+			padding-left: $padding;
+			padding-right: $padding;
+		}
+	}
+
+	&_title {
+		line-height: 1.4;
+		font-weight: 400;
+		font-size: rem-calc(13);
+		padding: $padding * 0.5;
+
+		&:hover {
+			color: color(primary);
+		}
+		//max-height: 3.6em;
+		//overflow: hidden;
+
+		@media #{$small-only} {
+			font-weight: 600;
+		}
+
+		@media #{$medium-up} {
+			padding-left: $padding;
+			padding-right: $padding;
+			font-size: rem-calc(14);
+			line-height: 1.4;
+		}
+
+		@media #{$large-up} {
+			font-size: rem-calc(16);
+			line-height: 1.4;
+		}
+	}
+
+	// Product Details
+	&_details {
+		padding: $padding * 0.5;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		float: left;
+		padding-bottom: $padding;
+		height: rem-calc(60);
+
+		@media #{$medium-up} {
+			padding-left: $padding;
+		}
+
+		@media #{$large-up} {
+			height: rem-calc(75);
+		}
+	}
+
+	&_price {
+		font-weight: bold;
+
+		&_actual {
+			font-weight: 400;
+			text-decoration: line-through; 
+			opacity: 0.4;
+			color: color(tertiary);
+		}
+	}
+
+	&_add-cart {
+		font-size: rem-calc(24);
+		color: color(primary);
+		cursor: pointer;
+		position: absolute;
+		top: $padding * 0.5;
+		right: $padding * 0.5;
+		padding: $padding;
+		margin: -$padding;
+
+		@media #{$medium-up} {
+			right: $padding;
+			font-size: rem-calc(26);
+		}
+
+		@media #{$large-up} {
+			font-size: rem-calc(30);
+		}
+	}
+}
