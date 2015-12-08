@@ -1,0 +1,11 @@
+.validation-advice {
+	font-size: rem-calc(14);
+	color: color(secondary);
+	font-weight: 400;
+	margin-bottom: $padding * 0.5;
+}
+.error-msg {
+	color: color(secondary);
+	margin-bottom: $padding;
+	font-size: rem-calc(14);
+}

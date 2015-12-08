@@ -1,6 +1,6 @@
 .container {
 	position: relative;
-	overflow-y: hidden;
+	//overflow-y: hidden;
 
 	&-gray {
 		background-color: lighten(color(gray-light), 57%);

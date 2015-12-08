@@ -1,11 +1,18 @@
-input, 
+input[type="text"], 
+input[type="number"], 
+input[type="submit"], 
+input[type="button"], 
+input[type="email"],
+input[type="password"], 
+.input-text,
 textarea {
-	//min-width: rem-calc(300);
+	width: rem-calc(300);
 	max-width: 100%;
 	//background-color: lighten(color(gray), 20%);
 	padding: $padding * 0.5 $padding $padding * 0.7;
 	font-size: rem-calc(16);
-	border: none;
+	border: rem-calc(1) solid lighten(color(gray-light), 40%);
+	border-radius: rem-calc(30);
 	color: color(gray-light);
 	//margin-bottom: $padding * 0.5;
 	@include appearance(none);
@@ -35,10 +42,83 @@ textarea {
 		outline: none;
 	}
 }
-/* input[type="submit"] {
-	@extend .button;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.input, select, {
+	-webkit-appearance: none; 
+
+	&:focus {
+		-webkit-appearance: none; 
+		outline: none;
+	}
+}
+.select-dropdown-light, input[name="qty"] {
+		border: rem-calc(1) solid color(primary) !important;
+		height: rem-calc(30) !important;
+		background-color: color(white) !important;
+
+		&:before, &:after {
+			transform: scale(1.3);
+		}
+
+		select {
+				font-size: rem-calc(16) !important;
+				background-color: transparent !important;
+				height: rem-calc(30);
+				//line-height: 1;
+				padding: rem-calc(5) rem-calc(5);
+				width: 95%;
+				border: none;
+			}
+
+		select, .dropdown-select {
+			&:focus {
+				outline: none;
+				border: none;
+				appearance: none;
+				user-select: none;
+			}
+		}
+}
+
+.select-dropdown-light {
+	min-width: 70%;
+	max-width: 100%;
+}
+.fieldset {
+	width: 100%;
+	float: left;
+}
+.form-list {
+	width: 100%;
+}
+
+.form_fields, .form-list {
+	.short {
+		@extend .col;
+		@extend .m-6-12;
+	}
+	.full {
+		@extend .col;
+		@extend .m-12-12;
+
+		input {
+			width: 100%;
+		}
+	}
+
+	input {
+		margin-bottom: $padding;
+	}
+}
+label {
+	font-weight: bold;
+	color: lighten(color(gray-light), 20%);
+}
+input[type="checkbox"] {
 	width: auto;
-	font-weight: 900;
-	cursor: pointer;
-	padding: $padding $padding * 2;
-} */
+	float: left;
+}

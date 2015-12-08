@@ -37,6 +37,10 @@
 			color: color(tetiary);
 			margin-right: $padding*0.8;
 		}
+
+		@media #{$small-only} {
+			transform: scale(0.9);
+		}
 	}
 	.badge {
 		background-color: color(secondary);
@@ -66,9 +70,120 @@
 		top: 130%;
 		margin-top: rem-calc(-30);
 
+		.product-details {
+			@extend .col;
+			@extend .s-9-12;
+			padding-top: 0;
+			padding-left: $padding * 0.2;
+			margin-bottom: $padding;
+		}
+
+		a.icon, button.icon, .quantity-button {
+			color: lighten(color(gray-light), 50%);
+			text-decoration: none;
+			padding: rem-calc(5);
+			line-height: 1;
+			margin-top: rem-calc(-2);
+			padding-right: $padding * 0.2;
+			margin-right: $padding * 0.2;
+			border-right: rem-calc(1) solid lighten(color(gray-light), 50%);
+			cursor: pointer;
+
+			&:hover {
+				color: color(primary);
+			}
+		}
+
+		.minicart-message {
+			padding: $padding * 0.5;
+			width: 100%;
+			text-align: center;
+			background-color: color(white);
+			font-weight: bold;
+			border-bottom: rem-calc(1) solid transparent;
+			font-size: rem-calc(12);
+			display: none;
+		}
+
+		#minicart-success-message {
+			color: color(primary);
+			border-bottom: rem-calc(1) solid color(primary);
+		}
+
+		#minicart-error-message {
+			color: color(secondary);
+			border-bottom: rem-calc(1) solid color(secondary);
+		}
+		th {
+			padding-top: 0;
+		}
+
+		.qty-text {
+			float: left;
+			padding-right: $padding * 0.3;
+		}
+
+		.quantity-button {
+			font-size: rem-calc(20);
+			background-color: transparent;
+			border: none;
+			width: auto;
+			font-size: rem-calc(10);
+			padding: $padding * 0.3 $padding;
+			background-color: desaturate(lighten(color(primary), 30%), 20%);
+			color: color(white);
+			margin-left: $padding * 0.5;
+
+			&:hover {
+				color: color(white);
+				background-color: darken(color(primary), 5%);
+			}
+		}
+
+		.product-name {
+			font-size: rem-calc(16);
+			
+			a {
+				text-decoration: none;
+				color: lighten(color(gray-light), 10%);
+				font-weight: 400;
+			}
+		}
+			
+		.price-wrapper {
+			font-size: rem-calc(13);
+			margin-bottom: $padding * 0.5;
+			width: 100%;
+			float: left;
+			color: lighten(color('gray-light'), 30%);
+		}
 
 		@media #{$medium-up} {
 			width: rem-calc(400);
+		}
+
+		.mini-cart_full-width {
+			width: 100%;
+			padding: $padding;
+			background-color: color(white);
+		}
+
+		.cart-link {
+			text-decoration: none;
+			text-align: center;
+			color: color(primary);
+			font-size: rem-calc(14);
+			display: inline-block;
+			margin-bottom: $padding * 0.5;
+
+			&:hover {
+				color: color(tetiary);
+			}
+		}
+
+		.cart-link_wrapper {
+			border-bottom: rem-calc(1) solid lighten(color(primary), 45%);
+			margin-bottom: $padding * 0.5
 		}
 
 		.checkOutBtn {
@@ -76,7 +191,7 @@
 			margin-left: 5%;
 			background-color: color(primary);
 			text-align: center;
-			margin-bottom: $padding;
+			margin-bottom: $padding * 0.5;
 			margin-top: $padding;
 			font-weight: bold;
 			text-transform: uppercase;
@@ -129,6 +244,7 @@
 			border-bottom: rem-calc(1) solid lighten(color(gray-light), 58%);
 			width: 100%;
 			display: block;
+			float: left;
 
 			&:last-child {
 				border-bottom: 0;
@@ -189,6 +305,14 @@
 			margin-bottom: 0;
 			font-size: rem-calc(12);
 			line-height: 1.2;
+		}
+
+		.qty {
+			font-size: rem-calc(14) !important;
+			float: left;
+			width: rem-calc(30) !important;
+			height: rem-calc(30) !important;
+			color: lighten(color(gray-light), 20%);
 		}
 
 		.small {

@@ -1,0 +1,25 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+function Minicart(t){this.formKey=t.formKey,this.previousVal=null,this.defaultErrorMessage="Error occurred. Try to refresh page.",this.selectors={itemRemove:"#cart-sidebar .remove",container:"#header-cart",inputQty:".cart-item-quantity",qty:".minicart-count",overlay:".minicart-wrapper",error:"#minicart-error-message",success:"#minicart-success-message",quantityButtonPrefix:"#qbutton-",quantityInputPrefix:"#qinput-",quantityButtonClass:".quantity-button"},t.selectors&&$j.extend(this.selectors,t.selectors)}Minicart.prototype={initAfterEvents:{},removeItemAfterEvents:{},init:function(){var t=this;$j(this.selectors.itemRemove).unbind("click.minicart").bind("click.minicart",function(e){e.preventDefault(),t.removeItem($j(this))}),$j(this.selectors.inputQty).unbind("blur.minicart").unbind("focus.minicart").bind("focus.minicart",function(){t.previousVal=$j(this).val(),t.displayQuantityButton($j(this))}).bind("blur.minicart",function(){t.revertInvalidValue(this)}),$j(this.selectors.quantityButtonClass).unbind("click.quantity").bind("click.quantity",function(){t.processUpdateQuantity(this)});for(var e in this.initAfterEvents)this.initAfterEvents.hasOwnProperty(e)&&"function"==typeof this.initAfterEvents[e]&&this.initAfterEvents[e]()},removeItem:function(t){var e=this;confirm(t.data("confirm"))&&(e.hideMessage(),e.showOverlay(),$j.ajax({type:"POST",dataType:"json",data:{form_key:e.formKey},url:t.attr("href")}).done(function(i){e.hideOverlay(),i.success?(e.updateCartQty(i.qty),e.updateContentOnRemove(i,t.closest("li"))):e.showMessage(i)}).error(function(){e.hideOverlay(),e.showError(e.defaultErrorMessage)}));for(var i in this.removeItemAfterEvents)this.removeItemAfterEvents.hasOwnProperty(i)&&"function"==typeof this.removeItemAfterEvents[i]&&this.removeItemAfterEvents[i]()},revertInvalidValue:function(t){this.isValidQty($j(t).val())&&$j(t).val()!=this.previousVal||($j(t).val(this.previousVal),this.hideQuantityButton(t))},displayQuantityButton:function(t){var e=this.selectors.quantityButtonPrefix+$j(t).data("item-id");$j(e).addClass("visible").attr("disabled",null)},hideQuantityButton:function(t){var e=this.selectors.quantityButtonPrefix+$j(t).data("item-id");$j(e).removeClass("visible").attr("disabled","disabled")},processUpdateQuantity:function(t){var e=$j(this.selectors.quantityInputPrefix+$j(t).data("item-id"));this.isValidQty(e.val())&&e.val()!=this.previousVal?this.updateItem(t):this.revertInvalidValue(e)},updateItem:function(t){var e=this,i=$j(this.selectors.quantityInputPrefix+$j(t).data("item-id")),s=parseInt(i.val(),10);return e.hideMessage(),e.showOverlay(),$j.ajax({type:"POST",dataType:"json",url:i.data("link"),data:{qty:s,form_key:e.formKey}}).done(function(t){e.hideOverlay(),t.success?(e.updateCartQty(t.qty),0!==s?e.updateContentOnUpdate(t):e.updateContentOnRemove(t,i.closest("li"))):e.showMessage(t)}).error(function(){e.hideOverlay(),e.showError(e.defaultErrorMessage)}),!1},updateContentOnRemove:function(t,e){var i=this;e.hide("slow",function(){$j(i.selectors.container).html(t.content),i.showMessage(t)})},updateContentOnUpdate:function(t){$j(this.selectors.container).html(t.content),this.showMessage(t)},updateCartQty:function(t){"undefined"!=typeof t&&$j(this.selectors.qty).text(t)},isValidQty:function(t){return t.length>0&&t-0==t&&t-0>0},showOverlay:function(){$j(this.selectors.overlay).addClass("loading")},hideOverlay:function(){$j(this.selectors.overlay).removeClass("loading")},showMessage:function(t){"undefined"!=typeof t.notice?this.showError(t.notice):"undefined"!=typeof t.error?this.showError(t.error):"undefined"!=typeof t.message&&this.showSuccess(t.message)},hideMessage:function(){$j(this.selectors.error).fadeOut("slow"),$j(this.selectors.success).fadeOut("slow")},showError:function(t){$j(this.selectors.error).text(t).fadeIn("slow")},showSuccess:function(t){$j(this.selectors.success).text(t).fadeIn("slow")}};

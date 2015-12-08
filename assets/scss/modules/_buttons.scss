@@ -1,15 +1,19 @@
-.button{
+button, .button{
 	padding: $padding * 0.3 $padding * 3;
 	font-family: $font-family-sans-serif;
 	text-decoration: none;
-	background-color: color(secondary);
+	background-color: color(primary);
 	display: inline-block;
 	color: color(white);
 	border-radius: rem-calc(40);
 	transition: background-color 0.6s ease-out;
+	border: none;
+	text-align: center;
+	cursor: pointer;
 
 	&:hover {
 		background-color: darken(color(secondary), 5%);
+		color: color(white);
 	}
 
 	.hero-evron & {
@@ -18,5 +22,87 @@
 		text-transform: uppercase;
 		letter-spacing: rem-calc(2);
 		font-weight: bold;
+	}
+
+	&-small {
+		font-size: rem-calc(13);
+		padding: 0 $padding * 2;
+	}
+	&-alt {
+		background-color: color(white);
+		color: color(primary);
+		border: rem-calc(2) solid color(primary);
+
+		&:hover {
+			border-color: color(secondary);
+		}
+	}
+
+	&-big, &-social {
+		font-size: rem-calc(16);
+		width: 100%;
+		font-weight: bold;
+	}
+
+	&-social {
+		text-align: center;
+		font-weight: bold;
+		margin-bottom: $padding;
+
+		span {
+			vertical-align: middle;
+		}
+
+		.icon {
+			font-size: rem-calc(30);
+			line-height: rem-calc(30);
+			padding-right: $padding;
+		}
+
+		&-facebook{
+			background-color: #4990E2;
+		}
+
+		&-twitter {
+			background-color: #5DD7FC;
+		}
+
+		&:hover {
+			background-color: lighten(color(primary), 20%);
+		}
+	}
+	&-auto {
+		width: rem-calc(400);
+		max-width: 100%;
+	}
+}
+.evron-wallet-button {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: $padding;
+	margin-bottom: $padding;
+	background-color: color(tetiary);
+	color: color(white);
+	border-color: transparent;
+	padding-left: $padding !important;
+	padding-right: $padding !important;
+	float: left;
+	font-size: rem-calc(12);
+	font-weight: bold;
+
+	@media #{$medium-up} {
+		font-size: rem-calc(14);
+		padding-left: $padding * 2 !important;
+		padding-right: $padding * 2 !important;
+	}
+
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.icon {
+		transform: translateY(30%);
+		padding-right: $padding * 0.2;
+		display: inline-block;
 	}
 }

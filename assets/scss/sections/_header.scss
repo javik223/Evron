@@ -78,6 +78,14 @@
 		padding-top: $padding * 0.1;
 		padding-bottom: $padding * 0.1;
 		//transition: all 1s ease-out;
+
+		@media #{$small-only} {
+			.evron-logo {
+				img {
+					width: rem-calc(40);
+				}
+			}	
+		}
 	}
 
 	.row-main {
@@ -90,8 +98,8 @@
 	}
 
 	@media #{$medium-up} {
-		padding-top: $padding;
-		padding-bottom: $padding;
+		padding-top: $padding * 0.5;
+		padding-bottom: $padding * 0.5;
 	}
 
 	span {
@@ -349,6 +357,7 @@
 		overflow: hidden;
 		width: 90%;
 		margin-right: 5%;
+		position: relative;
 
 		@media #{$medium-up} {
 			width: 100%;
@@ -360,6 +369,7 @@
 			float: left;
 			width: 85%;
 			font-weight: 100;
+			border: none;
 
 			&::placeholder {
 				color: lighten(color(gray-light), 40%);
@@ -370,19 +380,32 @@
 			}
 		}
 
-		input[type="button"] {
+		input[type="button"], input[type="submit"] {
 			width: 15%;
 			font-family: 'icomoon' !important;
 			text-align: center;
 			padding-left: 0;
 			padding-right: 0;
-			border-left: rem-calc(1) solid lighten(color(gray-light), 50%);
 			background-color: color(white);
 			color: color(primary);
+			border-radius: 0;
+			border: 0;
+			border-left: rem-calc(1) solid lighten(color(gray-light), 50%);
 
 			@media #{$large-up} {
 				width: 10%;
 			}
 		}
+	}
+}
+.search-autocomplete {
+	width: 100%;
+	filter: drop-shadow(0px 4px 20px rgba(0,0,0,0.1));
+	background-color: color(white);
+	padding-top: rem-calc(40);
+	margin-top: rem-calc(-40);
+
+	li {
+		padding: $padding;
 	}
 }

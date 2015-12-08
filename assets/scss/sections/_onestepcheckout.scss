@@ -1,0 +1,70 @@
+.onestepcheckout_loginlink {
+	text-decoration: none;
+	color: color(primary);
+}
+
+.onestepcheckout_orderform{
+	.full, .clr, .short, .two-fields {
+		margin-bottom: $padding;
+	}
+	label {
+		font-weight: bold;
+		color: lighten(color(gray-light), 20%);
+	}
+	.data-area {
+		display: none;
+	}
+
+	.country {
+		display: none;
+	}
+	.form_fields {
+		.short {
+			@extend .col;
+			@extend .m-6-12;
+		}
+		.full {
+			@extend .col;
+			@extend .m-12-12;
+
+			input {
+				width: 100%;
+			}
+		}
+	}
+	.op_block_title {
+		border-bottom: rem-calc(2) solid color(primary);
+		padding: $padding * 0.5;
+		font-weight: bold;
+		color: color(primary);	
+		float: left;
+		width: 100%;
+		margin-bottom: $padding * 0.2;
+	}
+
+	#checkout-shipping-method-load, .onestepcheckout_block {
+		margin-bottom: $padding;
+	}
+
+	 textarea {
+	 	width: 100%;
+	 	min-height: rem-calc(150);
+	 }
+}
+.buttons-set {
+	width: 100%;
+	float: left;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
+		padding: $padding * 0.5 $padding * 0.5;
+		border: rem-calc(1) solid lighten(color(gray-light), 40%);
+		border-radius: rem-calc(30);
+		color: lighten(color(gray-light), 10%);
+		width: rem-calc(400);
+		max-width: 100%;
+
+		&:focus, &:active {
+			border: rem-calc(1) solid desaturate(lighten(color(primary), 20%), 10%);
+		}
+	}

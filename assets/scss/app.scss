@@ -17,12 +17,14 @@
 	"modules/spinner",
 	"modules/fonts",
 	"modules/loader",
-	"modules/layout"
+	"modules/layout",
+	"modules/messages"
 	;
 
 // Components
 @import 
 	"components/hero",
+	"components/select",
 	"components/product"
 	;
 
@@ -42,10 +44,19 @@
 	"sections/general",
 	"sections/homepage",
 	"sections/menu",
-	"sections/minicart"
+	"sections/minicart",
+	"sections/checkout",
+	"sections/category",
+	"sections/onestepcheckout",
+	"sections/customer",
+	"sections/register"
 	;
 
 html, body {
 	width: 100%;
 	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+a, button, .icon {
+	touch-action: none;
 }

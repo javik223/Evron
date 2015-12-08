@@ -1,0 +1,216 @@
+.cart {
+	padding-bottom: $padding  * 3;
+	float: left;
+
+	.button {
+		@extend input[type="submit"];
+		border-radius: rem-calc(40);
+		margin-top: $padding * 0.5;
+		margin-bottom: $padding * 0.5;
+		width: 100% !important;
+		background-color: color(primary);
+		color: color(white);
+		text-align: center;
+	}
+
+	a {
+		color: color(primary);
+		text-decoration: none;
+	}
+
+	a.icon, button.icon, .quantity-button {
+		color: lighten(color(gray-light), 50%);
+		text-decoration: none;
+		padding: rem-calc(5);
+		line-height: 1;
+		margin-top: rem-calc(-2);
+		padding-right: $padding * 0.2;
+		margin-right: $padding * 0.2;
+		border-right: rem-calc(1) solid lighten(color(gray-light), 50%);
+		cursor: pointer;
+
+		&:hover {
+			color: color(primary);
+		}
+	}
+	table {
+		width: 100%;
+	}
+	thead {
+		border-bottom: rem-calc(1) solid color(primary);
+		width: 100%;
+	}
+	th {
+		padding-bottom: $padding;
+		margin-bottom: $padding;
+	}
+
+	tr {
+		width: 100%;
+		float: left;
+	}
+	.btn-update {
+		font-size: rem-calc(20);
+		background-color: transparent;
+		border: none;
+		width: auto;
+		font-size: rem-calc(10);
+		padding: $padding * 0.3 $padding;
+		background-color: desaturate(lighten(color(primary), 30%), 20%);
+		color: color(white);
+
+		&:hover {
+			color: color(white);
+			background-color: darken(color(primary), 5%);
+		}
+	}
+	.product-cart-image {
+		width: 30%;
+		padding-right: $padding * 0.5;
+	}
+
+	.qty {
+		float: left;
+		color: lighten(color(gray-light), 20%);
+		border: rem-calc(1) solid lighten(color(primary), 30%);
+		background-color: color(white) !important;
+		width: rem-calc(35);
+		height: rem-calc(35) !important;
+		padding: $padding * 0.3;
+		text-align: center;
+		border-radius: 100%;
+		margin-top: rem-calc(-5);
+		font-size: rem-calc(12);
+		transition: border 0.3s ease-out;
+
+		&:focus {
+			border: rem-calc(1) solid color(primary);
+		}
+
+		@media #{$medium-up} {
+			width: rem-calc(40);
+			height: rem-calc(40) !important;
+			margin-top: rem-calc(-10);
+			font-size: re-calc(18);
+		}
+	}
+
+	label {
+		float: left;
+		padding-right: $padding * 0.2;
+		font-size: rem-calc(10);
+
+		@media #{$medium-up} {
+			font-size: rem-calc(16);
+			padding-right: $padding * 0.4;
+		}
+	}
+
+	.cart-links {
+		li {
+			float: left;
+			font-size: rem-calc(13);
+			padding-right: $padding * 0.4;
+			margin-top: -$padding * 0.5;
+
+			a {
+				padding-top: $padding * 0.5;
+				display: inline-block;
+			}
+		}
+	}
+	.cart-table {
+		> .row {
+			float: left;
+			padding-top: $padding;
+			padding-bottom: $padding;
+			border-top: rem-calc(1) solid lighten(color(gray-light), 50%);
+
+			@media #{$medium-up} {
+				padding-top: $padding * 2;
+			}
+
+			> div {
+				padding-right: $padding * 0.2;
+			}
+		}
+	}
+	.prices, .item-options {
+		font-size: rem-calc(13);
+		line-height: 1.6;
+		margin-top: $padding * 0.2;
+
+		@media #{$medium-up} {
+			font-size: rem-calc(15);
+		}
+	}
+	.item-options {
+		margin-bottom: $padding;
+	}
+	.prices {
+		@media #{$small-only} {
+			margin-top: rem-calc(-10);
+			margin-bottom: $padding * 0.7;
+		}
+	}
+
+	.product-name {
+		font-weight: 300;
+		padding-right: $padding * 0.5;
+	}
+
+	.cart-totals-wrapper {
+		border-radius: rem-calc(6);
+		border: rem-calc(1) solid lighten(color(gray-light), 50%);
+		padding: $padding;	
+		width: 100%;
+		background-color: color(white);
+		filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.2));
+		padding-top: $padding * 2;
+		padding-bottom: $padding * 2;
+	}
+
+	.button2 {
+		font-size: rem-calc(13);
+		padding: $padding * 0.5 $padding;
+		background-color: color(white);
+		border-radius: rem-calc(20);
+		border: rem-calc(1) solid lighten(color(primary), 30%);
+		color: lighten(color(primary), 20%);
+		margin-bottom: $padding * 0.5;
+
+		@media #{$medium-up} {
+			font-size: rem-calc(16);
+		}
+	}
+	.messages {
+		width: 100%;
+		background-color: lighten(color(primary), 50%);
+		float: right;
+		padding: $padding * 0.5
+	}
+
+	tr {
+		padding-bottom: $padding;
+		margin-bottom: $padding;
+		border-bottom: rem-calc(1) solid lighten(color(gray-light), 50%);
+	}
+
+	#shopping-cart-totals-table {
+		.price {
+			font-size: rem-calc(24);
+			color: color(primary);
+			font-weight: 100;
+			text-align: right;
+			padding-left: $padding;
+		}
+	}
+
+	.checkout-types {
+		width: 100%;
+
+		ul, li, .button {
+			width: 100%;
+		}
+	}
+}
