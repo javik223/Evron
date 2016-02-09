@@ -37,7 +37,7 @@ body, p {
 	font-family: $base-font-family;
 	font-weight: 200;
 	letter-spacing: 0.1px;
-	color: lighten(color(gray-light), 20%);
+	color: lighten(color(gray-light), 10%);
 
 	@media #{$medium-up} {
 		font-size: $base-font-size;
@@ -65,7 +65,7 @@ em {
 	font-weight: $font-weight-light;
 }
 .text-small {
-	font-size: 80%;
+	font-size: 90%;
 	line-height: 1.5;
 }
 .text-serif {
@@ -138,6 +138,9 @@ em {
 // Letter spacing
 .text-space-1 {
 	letter-spacing: rem-calc(1);
+}
+.text-space-3 {
+	letter-spacing: rem-calc(6);
 }
 // Change text color to primary color
 .c-p {

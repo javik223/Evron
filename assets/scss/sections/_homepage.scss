@@ -1,21 +1,61 @@
 .main-banner {
 	float: left;
 	width: 100%;
-	margin-bottom: $padding * 2;
+	overflow: hidden;
+	//margin-bottom: $padding;
 
 	@media #{$medium-up} {
-		margin-bottom: $padding * 4;
+		//margin-bottom: $padding;
+	}
+
+	> div {
+		overflow: hidden;
+		float: left;
 	}
 
 	&.owl-carousel .owl-item img {
 		width: 160%;
 		max-width: none;
-		float: right;
+		float: left;
 
 
 		@media #{$large-up} {
 			width: 100%;
 		}
+	}
+
+	.owl-dots {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.owl-dots {
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: $padding;
+	margin-bottom: $padding;
+	
+	.owl-dot {
+		display: inline-block;
+
+		&.active {
+			span {
+				background-color: lighten(color(primary), 30%);
+			}	
+		}
+	}
+
+	span {
+		width: rem-calc(10);
+		height: rem-calc(10);
+		background-color: lighten(color(gray-light), 50%);
+		display: inline-block;
+		border-radius: 50%;
+		margin-left: $padding * 0.3;
+		margin-right: $padding * 0.3;
 	}
 }
 .featured-categories {
@@ -60,17 +100,34 @@
 	}
 }
 .promotion-carousel {
-	@extend .row;
-	@extend .pb-large;
-	display: block;
 	float: left;
-	position: relative;
+	width: 100%;
+	overflow: hidden;
 
-	> a {
-		@extend .col;
-		@extend .s-6-12;
-		@extend .m-4-12;
-		padding: $padding;
-		display: inline-block;
+	.owl-item {
+		padding: $padding * 2;
+		float: left;
+		position: relative;
+
+		&:first-child {
+			@media #{$medium-up} {
+				&:after {
+					content: '';
+					width: rem-calc(1.5);
+					height: 50%;
+					background-color: lighten(color(gray-light), 55%);
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+
+	a {
+		display: block;
+		width: 100%;
+		float: left;
 	}
 }

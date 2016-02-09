@@ -20,3 +20,25 @@
 		padding: $padding * 2;
 	}
 }
+.cms-page-header {
+	@extend .beta;
+	text-align: center;
+	padding-bottom: $padding;
+	@extend .c-p;
+	float: none;
+	width: 100%;
+	@extend .mt-pad;
+	position: relative;
+	
+
+	&:after {
+		content: '';
+		width: rem-calc(60);
+		position: absolute;
+		height: rem-calc(2);
+		background-color: color(primary);
+		bottom: $padding * 0.6;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

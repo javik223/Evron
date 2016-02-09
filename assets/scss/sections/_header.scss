@@ -10,6 +10,11 @@
 		font-size: rem-calc(13);
 	}
 
+	@media #{$large-up} {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	* {
 		color: color(white);
 		text-decoration: none;
@@ -27,7 +32,8 @@
 		margin: auto auto;
 
 		@media #{$medium-up} {
-			float: right;	
+			float: right;
+			margin-right: rem-calc(-20);	
 		}
 	}
 
@@ -74,6 +80,11 @@
 	border-bottom: rem-calc(1) solid lighten(color(gray-light), 50%);
 	transform: translate3d(0, 0, 0);
 
+	@media #{$medium-up} {
+		padding-top: $padding * 0.5;
+		padding-bottom: $padding * 0.5;
+	}
+
 	&.sticky {
 		padding-top: $padding * 0.1;
 		padding-bottom: $padding * 0.1;
@@ -82,7 +93,7 @@
 		@media #{$small-only} {
 			.evron-logo {
 				img {
-					width: rem-calc(40);
+					width: rem-calc(50);
 				}
 			}	
 		}
@@ -91,15 +102,14 @@
 	.row-main {
 		display: table;
 
+		@media #{$small-only} {
+			width: 100%;
+		}
+
 		> div {
 			display: table-cell;
 			vertical-align: middle;
 		}
-	}
-
-	@media #{$medium-up} {
-		padding-top: $padding * 0.5;
-		padding-bottom: $padding * 0.5;
 	}
 
 	span {
@@ -121,19 +131,6 @@
 
 		> span {
 			text-transform: uppercase;
-		}
-
-		.side-menu {
-			position: absolute !important;
-			width: rem-calc(325);
-			top: $padding * 5.2;
-			display: none;
-
-			li {
-				padding-top: $padding * 0.3;
-				//padding-bottom: $padding * 0.2;
-				line-height: 1.6;
-			}
 		}
 	}
 
@@ -167,29 +164,41 @@
 		color: color(primary);
 		cursor: pointer;
 		font-size: rem-calc(20);
-		padding: $padding;
-		margin: -$padding;
+		padding: $padding * 0.5;
+		margin: -$padding * 0.5;
 		margin-left: 0;
 
 		@media #{$medium-up} {
 			display: none !important;
+			padding: $padding;
+			margin: -$padding;
 		}
 	}
 
+	.icon.icon-account {
+		font-size: rem-calc(28) !important;
+		padding-right: $padding * 0.5;
+	}
+
 	.evron-logo {
-		display: inline-block;
+		display: table-cell;
 		margin: auto auto;
 		text-align: center;
 		align: center;
-		padding-right: $padding;
 		//width: 80%;
 
+		a {
+			display: inline-block;
+			margin-bottom: rem-calc(-10);
+		}
+
 		@media #{$small-only} {
-			width: 85%;
+			width: 35%;
 		}
 
 		@media #{$medium-up} {
 			//width: 60%;
+			padding-right: $padding;
 		}
 
 		img {
@@ -200,9 +209,15 @@
 	.account-login {
 		position: relative;
 		float: left;
-		padding-right: $padding * 1.5;
-		margin-right: $padding;
+		padding-right: $padding * 0.5;
+		margin-right: $padding * 0.5;
 		border-right: rem-calc(1) solid lighten(color(gray-light), 50%);
+
+
+		@media #{$medium-up} {
+			padding-right: $padding * 1.5;
+			margin-right: $padding;
+		}
 
 		&:after {
 			font-family: 'icomoon';
@@ -243,48 +258,73 @@
 		}
 
 		.overlayBtn {
-			display: block;
+			display: table-cell;
 			cursor: pointer;
-			padding: $padding;
-			margin: -$padding;
+			//padding: $padding;
+			//margin: -$padding;
+			vertical-align: middle;
 		}
 
 		.overlay_wrapper {
-			filter: drop-shadow(0px 4px 20px rgba(0,0,0,0.1));
 			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			width: auto;
+			//box-shadow: 0px 4px 10px 5px rgba(0,0,0,0.08);
+			filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+			border-radius: rem-calc(10);
+			top: 130%;
+			margin-top: rem-calc(-30);
+
+
+			position: absolute;
+			right: 0;
+			transform: translateX(20%);
 			max-width: none;
-			//margin-top: rem-calc(15);
+			margin-top: rem-calc(15);
 			text-align: left;
+			//overflow: hidden;
+			z-index: 5000;
+
+			@media #{$medium-up} {
+				position: absolute;
+				left: 10%;
+				transform: translateX(-50%);
+				filter: drop-shadow(0px 4px 20px rgba(0,0,0,0.1));
+				width: 200%;
+			}
 		}
 
 		.overlay {
-			display: none;
-			overflow: hidden;
+			width: 100%;
+					margin: auto auto;
+					display: none;
+					float: left;
+					position: relative;
+					margin-top: rem-calc(-30);
+					overflow: hidden;
 
-			// CSS Triangle
-			&:before {
-				content: '';
-				position: absolute;
-				top: rem-calc(-10);
-				left: 50%;
-				transform: translateX(-50%);
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 0 15px 20px 15px;
-				border-color: transparent transparent color(white) transparent;
-			}
+					// CSS Triangle
+					&:before {
+						content: '';
+						position: absolute;
+						top: rem-calc(0);
+						right: 30%;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 15px 20px 15px;
+						border-color: transparent transparent /* lighten(color(primary), 57%) */ color(white) transparent;
+
+						@media #{$medium-up} {
+							right: rem-calc(20);
+						}
+					}
 
 			ul {
+				margin-top: rem-calc(15);
 				border-radius: rem-calc(4);
 				overflow: hidden;
 				background-color: color(white);
 				overflow: hidden;
 				//border: rem-calc(1) solid lighten(color(gray-light), 57%);
-				box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.17);
 				position: relative;
 				z-index: 10000;
 			}
@@ -343,7 +383,9 @@
 		}
 
 		@media #{$large-up} {
-			width: 42%;			
+			width: 42%;
+			padding-bottom: 0;
+			padding-top: 0;			
 		}
 	}
 
@@ -354,10 +396,9 @@
 		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.17);
 		border-radius: rem-calc(40);
 		float: right;
-		overflow: hidden;
+		//overflow-x: hidden;
 		width: 90%;
 		margin-right: 5%;
-		position: relative;
 
 		@media #{$medium-up} {
 			width: 100%;
@@ -365,7 +406,7 @@
 		}
 
 
-		input[type="text"] {
+		input[type="text"], input[type="search"] {
 			float: left;
 			width: 85%;
 			font-weight: 100;
@@ -380,7 +421,7 @@
 			}
 		}
 
-		input[type="button"], input[type="submit"] {
+		input[type="button"], input[type="submit"], button[type="submit"] {
 			width: 15%;
 			font-family: 'icomoon' !important;
 			text-align: center;
@@ -391,6 +432,9 @@
 			border-radius: 0;
 			border: 0;
 			border-left: rem-calc(1) solid lighten(color(gray-light), 50%);
+			border-top-right-radius: rem-calc(40);
+			border-bottom-right-radius: rem-calc(40);
+			font-size: rem-calc(20);
 
 			@media #{$large-up} {
 				width: 10%;
@@ -402,10 +446,16 @@
 	width: 100%;
 	filter: drop-shadow(0px 4px 20px rgba(0,0,0,0.1));
 	background-color: color(white);
-	padding-top: rem-calc(40);
-	margin-top: rem-calc(-40);
 
 	li {
 		padding: $padding;
 	}
+}
+
+#algolia-autocomplete-tt.twitter-typeahead {
+  width: 85% !important;
+
+  @media #{$large-up} {
+  	width: 90% !important;
+  }
 }

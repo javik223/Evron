@@ -1,0 +1,90 @@
+//Defaults & Framework
+@import 
+	"bourbon",
+	"compass/reset",
+	"framework/global",
+	"framework/settings"
+	;
+
+// Modules
+@import 
+	"modules/colors"
+	;
+
+#login-webpos {
+	display: block;
+    //margin-top: 50%;
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .modal-dialog {
+    	width: 500px;
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translateY(-50%) translateX(-50%);
+    	margin-top: 0;
+    }
+}
+.login-webpos {
+	z-index: 200;
+	padding: 10%;
+	padding-bottom: 20%;
+	position: relative;
+
+	.form-login {
+		input[type="text"], input[type="password"], button {
+			margin: 10px 0;
+    		height: 45px;
+
+    		width: 100%;
+    		max-width: 100%;
+    		//background-color: lighten(color(gray), 20%);
+    		padding: $padding * 0.5 $padding $padding * 0.7;
+    		font-size: rem-calc(16);
+    		border: rem-calc(1) solid lighten(color(gray-light), 40%);
+    		border-radius: rem-calc(30);
+    		color: color(gray-light);
+    		//margin-bottom: $padding * 0.5;
+    		@include appearance(none);
+    		
+    		@include placeholder {
+    			color: lighten(color(gray-light), 30%);
+    		}
+
+ 			&:autofill {
+ 				background-color: red;
+ 			}
+		}
+
+		button {
+			border: none;
+			color: color(white);
+		}
+	}
+
+	.logo img {
+		max-height: 150px;
+		padding-bottom: 10%;
+	}
+
+	.validation-advice {
+		font-size: 12px;
+		color: red;
+		margin-left: 10px;
+	}
+}
+.fade-login {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: #fff;
+	opacity: 0.95;
+	filter: alpha(opacity=95);
+}

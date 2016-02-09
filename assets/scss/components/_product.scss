@@ -1,4 +1,7 @@
 .product-grid {
+	width: 100%;
+	float: left;
+
 	.product {
 		@extend .col;
 		@extend .s-6-12;
@@ -9,6 +12,15 @@
 	@media #{$large-up} {
 		padding-left: $padding;
 		padding-right: $padding;
+	}
+
+	&.product-grid-spread {
+		.product {
+			@extend .col;
+			@extend .s-6-12;
+			@extend .m-4-12;
+			@extend .l-2-12;
+		}
 	}
 }
 .product {
@@ -113,8 +125,9 @@
 	&_title {
 		line-height: 1.4;
 		font-weight: 400;
-		font-size: rem-calc(13);
+		font-size: rem-calc(14);
 		padding: $padding * 0.5;
+		letter-spacing: -0.2px;
 
 		&:hover {
 			color: color(primary);
@@ -123,13 +136,13 @@
 		//overflow: hidden;
 
 		@media #{$small-only} {
-			font-weight: 600;
+			font-weight: 400;
 		}
 
 		@media #{$medium-up} {
 			padding-left: $padding;
 			padding-right: $padding;
-			font-size: rem-calc(14);
+			font-size: rem-calc(15);
 			line-height: 1.4;
 		}
 
@@ -185,11 +198,11 @@
 
 		@media #{$medium-up} {
 			right: $padding;
-			font-size: rem-calc(28);
+			font-size: rem-calc(26);
 		}
 
 		@media #{$large-up} {
-			font-size: rem-calc(30);
+			font-size: rem-calc(26);
 		}
 	}
 
@@ -217,8 +230,8 @@
 			padding: $padding;
 			margin: -$padding;
 			cursor: pointer;
-			font-size: rem-calc(20);
-			line-height: rem-calc(20);
+			font-size: rem-calc(18);
+			line-height: rem-calc(18);
 		}
 	}
 
@@ -314,6 +327,11 @@
 		img.selected {
 			border: rem-calc(1) solid lighten(color(primary), 10%);
 			border-radius: rem-calc(4);
+		}
+
+		li {
+			float: left;
+			margin-bottom: $padding * 0.2;
 		}
 	}
 
@@ -728,5 +746,169 @@ select, .dropdown-select {
 		.link-wishlist {
 			font-size: rem-calc(12);
 		}
+	}
+}
+.btn-cart {
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken(color(primary), 5%);
+	}
+	&:active {
+		transform: translateY(10%);
+	}
+}
+/*
+* Pagination
+*/
+.toolbar {
+	width: 100%;
+	float: left;
+	margin-top: $padding * 2;
+	margin-bottom: $padding * 4;
+
+	@media #{$large-up} {
+		padding-left: $padding;
+		padding-right: $padding;
+	}
+
+	* {
+		font-size: rem-calc(13);
+
+		@media #{$medium-up} {
+			font-size: rem-calc(16);
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: lighten(color(gray-light), 30%);
+
+		&:hover {
+			color: color(primary);
+			//font-weight: bold;
+			border-color: color(primary);
+		}
+	}
+
+	.limiter, .count-container {
+		display: none;
+	}
+}
+.sorter {
+	float: left;
+	margin-bottom: $padding;
+
+	@media #{$medium-up} {
+		width: 50%;
+	}
+
+	.sort-by {
+		display: none;
+
+		@media #{$medium-up} {
+			display: block;
+		}
+
+		label {
+			font-weight: normal !important;
+			padding-right: $padding * 0.5;
+			float: left;
+		}
+	}
+
+	.sort-by-switcher {
+		display: inline-block;
+		padding-left: $padding * 0.2;
+		padding-right: $padding * 0.2;
+		padding: rem-calc(6);
+		width: rem-calc(30);
+		line-height: 1;
+		height: rem-calc(30);
+		text-align: center;
+		border: rem-calc(1) solid lighten(color(gray-light), 30%);
+		border-radius: 50%;
+	}
+
+	.select-dropdown, .select-dropdown-light {
+		display: inline-block;
+		width: rem-calc(150) !important;
+		min-width: auto;
+		float: left;
+		margin-right: $padding * 0.5;
+
+		select {
+			height: auto;
+			line-height: 1;
+			font-size: rem-calc(14) !important;
+		}
+	}
+}
+.pager {
+	float: left;
+	width: 100%;
+
+	@media #{$medium-up} {
+		width: 50%;
+		float: right;
+	}
+}
+.pages {
+
+	strong {
+		display: none;
+	}
+
+	ol {
+		text-align: center;
+		width: 100%;
+
+		@media #{$medium-up} {
+			text-align: right;
+		}
+
+		li {
+			&:last-child {
+				float: none;
+			}
+		}
+	}
+
+	li {
+		display: inline-block;
+		padding-left: $padding * 0.2;
+		padding-right: $padding * 0.2;
+		padding: rem-calc(6);
+		width: rem-calc(30);
+		line-height: 1;
+		height: rem-calc(30);
+		text-align: center;
+
+		a {
+			color: color(primary);
+			font-weight: 400;
+			display: inline-block;
+		}
+
+
+		&.current {
+			color: lighten(color(gray-light), 30%);
+			border: rem-calc(1) solid lighten(color(gray-light), 30%);
+			border-radius: 50%;
+		}
+	}
+
+	.pages-auto-width {
+		width: auto;
+	}
+
+	.previous {
+		padding-right: $padding * 0.5;
+		border-right: rem-calc(1) solid lighten(color(gray-light), 30%);
+	}
+
+	.next {
+		padding-left: $padding * 0.5;
+		border-left: rem-calc(1) solid lighten(color(gray-light), 30%);
 	}
 }

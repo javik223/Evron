@@ -3,6 +3,7 @@
 	padding-right: $padding;
 	z-index: 100;
 	transform: translateZ(0.001deg);
+	padding-top: $padding * 0.2;
 
 	&:after {
 		font-family: 'icomoon';
@@ -33,30 +34,48 @@
 		cursor: pointer;
 
 		.icon-cart {
-			font-size: rem-calc(40);
+			font-size: rem-calc(30);
 			color: color(tetiary);
-			margin-right: $padding*0.8;
-		}
+			//margin-right: $padding*0.8;
 
-		@media #{$small-only} {
-			transform: scale(0.9);
+			@media #{$medium-up} {
+				font-size: rem-calc(40);
+			}
+		}
+	}
+
+	.minicart-wrapper {
+		> p {
+			background-color: color(white);
+			padding: $padding * 0.5;
+			float: left;
+			width: 100%;
 		}
 	}
 	.badge {
 		background-color: color(secondary);
 		color: color(white);
 		border-radius: 50%;
-		width: rem-calc(22);
-		height: rem-calc(22);
-		line-height: rem-calc(22);
-		font-size: rem-calc(12);
+		width: rem-calc(18);
+		height: rem-calc(18);
+		line-height: rem-calc(18);
+		font-size: rem-calc(10);
 		font-weight: bold;
 		position: absolute;
-		right: $padding * 0.5;
-		top: -$padding*0.2;
 		text-align: center;
 		display: table-cell;
 		vertical-align: middle;
+		right: -$padding * 0.1;
+		top: -$padding*0.2;
+
+		@media #{$medium-up} {
+			font-size: rem-calc(12);
+			width: rem-calc(22);
+			height: rem-calc(22);
+			line-height: rem-calc(22);
+			right: -$padding * 0.1;
+			top: -$padding*0.2;
+		}
 	}
 
 	&_overlay_wrapper {
@@ -70,12 +89,30 @@
 		top: 130%;
 		margin-top: rem-calc(-30);
 
+		.sticky & {
+			transform: translateY(-$padding*0.3);
+
+			@media #{$medium-up} {
+				transform: translateY(-$padding*0.3);
+			}
+		}
+
 		.product-details {
 			@extend .col;
 			@extend .s-9-12;
 			padding-top: 0;
 			padding-left: $padding * 0.2;
+			padding-right: $padding * 0.2 !important;
 			margin-bottom: $padding;
+
+			.qty {
+				font-size: rem-calc(12) !important;
+				float: left;
+				width: rem-calc(30) !important;
+				height: rem-calc(30) !important;
+				color: lighten(color(gray-light), 20%);
+				margin-top: -$padding * 0.2;
+			}
 		}
 
 		a.icon, button.icon, .quantity-button {
@@ -232,10 +269,15 @@
 		ul {
 			float: left;
 			background-color: color(white);
-			max-height: 70vh;
+			max-height: 60vh;
 			overflow-y: scroll;
 			margin-bottom: $padding;
+			padding-bottom: $padding;
 			width: 100%;
+
+			@media #{$medium-up} {
+				max-height: 60vh;
+			}
 		}
 
 		li {
@@ -262,6 +304,14 @@
 			padding-left: $padding;
 			padding-right: $padding;
 			border-bottom: rem-calc(2) solid lighten(color(gray-light), 58%);
+
+			.left {
+				max-width: 40%
+			}
+
+			.right {
+				max-width: 70%;
+			}
 		}
 
 		.productImage {
@@ -305,14 +355,6 @@
 			margin-bottom: 0;
 			font-size: rem-calc(12);
 			line-height: 1.2;
-		}
-
-		.qty {
-			font-size: rem-calc(14) !important;
-			float: left;
-			width: rem-calc(30) !important;
-			height: rem-calc(30) !important;
-			color: lighten(color(gray-light), 20%);
 		}
 
 		.small {

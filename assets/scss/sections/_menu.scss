@@ -5,20 +5,41 @@
 	border: 1px solid rgba(207,207,207,0.25);
 	box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.17);
 	border-radius: rem-calc(4);
-	position: relative;
-	z-index: 200;
+	//position: relative;
+	//z-index: 200;
 	margin-bottom: $padding * 4;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
 
 	@media #{$small-only} {
 		width: 100vw !important;
+		//max-height: 50vh;
+		overflow-y: scroll;
+	}
+
+	.header & {
+		position: absolute !important;
+		width: rem-calc(325);
+		top: rem-calc(70);
+		display: none;
+
+		@media #{$medium-up} {
+			top: rem-calc(100);
+		}
+
+		li {
+			padding-top: $padding * 0.3;
+			//padding-bottom: $padding * 0.2;
+			line-height: 1.4;
+		}
 	}
 
 	.menu-items {
 		li > ul {
+			position: relative;
 			display: none;
 			width: 100%;
 			background-color: lighten(color(gray-light), 57%);
-			z-index: 500000;
 
 			@media #{$medium-up} {
 				display: none;
@@ -29,7 +50,7 @@
 				//border: 1px solid rgba(207,207,207,0.25);
 				box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.17);
 				border-radius: rem-calc(4);
-				z-index: 100;
+				z-index: 20000;
 				width: 100%;
 				transform: translateX(-1%);
 			}
@@ -53,6 +74,8 @@
 
 	li {
 		font-size: rem-calc(16);
+		letter-spacing: -0.2px;
+		font-weight: 400;
 		width: 100%;
 		position: relative;
 
@@ -105,13 +128,14 @@
 	a {
 		display: block;
 		color: lighten(color(gray-light), 20%);
+		//color: color(primary);
 		padding-left: $padding;
 		padding-right: $padding;;
-		padding-top: $padding * 0.3;
-		padding-bottom: $padding * 0.3;
+		padding-top: $padding * 0.2;
+		padding-bottom: $padding * 0.2;
 		text-decoration: none;
 		transition: color 0.2s ease-out;
-		font-weight: 400;
+		font-weight: 500;
 
 		&:hover {
 			color: color(primary);

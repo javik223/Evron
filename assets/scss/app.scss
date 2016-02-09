@@ -28,12 +28,11 @@
 	"components/product"
 	;
 
-
 // Plugins
 
-@import
-	"plugins/owlslider"
-	;
+//@import
+	//"plugins/owlslider"
+	//;
 
 
 // Sections
@@ -41,7 +40,6 @@
 @import
 	"sections/header",
 	"sections/footer",
-	"sections/general",
 	"sections/homepage",
 	"sections/menu",
 	"sections/minicart",
@@ -49,7 +47,8 @@
 	"sections/category",
 	"sections/onestepcheckout",
 	"sections/customer",
-	"sections/register"
+	"sections/register",
+	"sections/general"
 	;
 
 html, body {

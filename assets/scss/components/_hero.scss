@@ -36,4 +36,8 @@
 	h1 {
 		text-transform: uppercase;
 	}
+
+	@media #{$large-up} {
+		min-height: 80vh;
+	}
 }

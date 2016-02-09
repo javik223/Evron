@@ -90,7 +90,7 @@
 		width: ( $i / $grid-columns-alt ) * 100%;
 		float: left;
 	}
-	.s-offset-#{$i} {
+	.s-offset-alt-#{$i} {
 		margin-left: ( $i / $grid-columns-alt ) * 100%;
 	}
 }
@@ -101,7 +101,7 @@
 			width: ( $i / $grid-columns-alt ) * 100%;
 			float: left;
 		}
-		.m-offset-#{$i} {
+		.m-offset-alt-#{$i} {
 			margin-left: ( $i / $grid-columns-alt ) * 100%;
 		}
 	}
@@ -112,7 +112,7 @@
 			width: ( $i / $grid-columns-alt ) * 100%;
 			float: left;
 		}
-		.l-offset-#{$i} {
+		.l-offset-alt-#{$i} {
 			margin-left: ( $i / $grid-columns-alt ) * 100%;
 		}
 	}
@@ -123,8 +123,8 @@
 //Extra padding for mobile and tablet
 .m-pad {
 	@media #{$small-only} {
-		padding-left: rem-calc(30);
-		padding-right: rem-calc(30) !important;
+		padding-left: rem-calc(20);
+		padding-right: rem-calc(20) !important;
 	}
 }
 .mt-pad {
@@ -181,7 +181,7 @@
 }
 .l-hide {
 	@media #{$large-up} {
-		display: none;
+		display: none !important;
 	}
 }
 .sm-hide {
@@ -190,7 +190,7 @@
 }
 .ml-hide {
 	@media #{$medium-up} {
-		display: none;
+		display: none !important;
 	}
 }
 .hide { display: none; }

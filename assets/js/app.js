@@ -23,11 +23,11 @@ jQuery(document).ready(function($){
 	var Evron = Evron || {};
 
 	Evron.SideMenu = (function(){
-		var sideMenu = $(".secondary-menu"),
+		var sideMenu = $(".side-menu"),
 			self = this,
 			body = $("body"),
 			html = $("html"),
-			dropdownElem = $(".side-menu").find('.dropdown')
+			dropdownElem = sideMenu.find('.dropdown')
 			;
 
 		if (sideMenu.length <= 0) {
@@ -35,7 +35,6 @@ jQuery(document).ready(function($){
 		}
 
 		var init = function() {
-			// Event Listener for Hover
 			dropdownElem
 				.on('mouseenter', function(){
 					showDropdown($(this));
@@ -108,7 +107,8 @@ jQuery(document).ready(function($){
 	Evron.nav = (function(){
 		var navElem = $(".nav"),
 			menuBtn = $(".menu-wrapper"),
-			playHead = new TimelineMax({yoyo: true, paused: true});
+			playHead = new TimelineMax({yoyo: true, paused: true}),
+			navVisible = false;
 
 		playHead
 			.set(navElem, {display: 'block', autoAlpha: 0, yPercent: "-10%"})
@@ -116,27 +116,49 @@ jQuery(document).ready(function($){
 
 		var init = function() {
 			menuBtn
-				.on('mouseenter', function(){
-					showNav();
+				.on('click', function(){
+					if (navVisible === false ) {
+						showNav();
+					} else {
+						hideNav();
+					}
 				})
-				.on('mouseleave', function(){
-					hideNav();
+				.on('mouseover', function(){
+					showNav();
 				});
+
+			navElem.on('mouseleave', function(){
+				hideNav();
+			});
+
 		};
 
 		var showNav = function() {
 			playHead.play();
+			navVisible = true;
+
+			setTimeout(function(){
+				if (navVisible === true) {
+					$("body").on('click', function(e){
+						if (e.target != navElem && !(navElem.has(e.target).length)) {
+							hideNav();
+							$("body").off();
+						}
+					});
+				}
+			}, 200);
 		};
 
 		var hideNav = function() {
 			playHead.reverse();
+			navVisible = false;
 		};
 
 		init();
 	}());
 
 	// Show Overlay
-	function Overlay(options){
+	function Overlay(options, func){
 		this.options = {
 			elem: $(".account-login"),
 			btnRaw: ".overlayBtn"
@@ -154,10 +176,26 @@ jQuery(document).ready(function($){
 		//console.log(this.options);
 
 		var showOverlay = function() {
+			if (typeof func == "function") {
+				func();
+			}
 			var height = self.options.elemOverlay.data('height');
 			self.overlayVisible = true;
 			TweenMax.to(self.options.elemOverlay, 0.6, {height: height, force3D: true, onComplete: function(){
 			}});
+
+			setTimeout(function(){
+				if (self.overlayVisible === true) {
+					$("body").on('click', function(e){
+						console.log("elemOverlay: ", self.options.elemOverlay);
+						console.log("targetElement: ", e.target);
+						if (e.target != self.options.elemOverlay && !(self.options.elemOverlay.has(e.target).length)) {
+							hideOverlay();
+							$("body").off();
+						}
+					});
+				}
+			}, 200);
 		};
 
 		var hideOverlay = function() {
@@ -178,7 +216,7 @@ jQuery(document).ready(function($){
 		var init = function(){
 			getOverlayHeight();
 
-			self.options.overlayBtn.on('mouseenter', function(){
+			/*self.options.overlayBtn.on('mouseenter', function(){
 				if (self.overlayVisible === false) {
 					showOverlay();
 				}
@@ -188,7 +226,7 @@ jQuery(document).ready(function($){
 					hideOverlay();
 				}
 			});
-
+*/
 			self.options.overlayBtn.on('click', function(){
 				if (self.overlayVisible === false) {
 					showOverlay();
@@ -237,6 +275,9 @@ jQuery(document).ready(function($){
 		elem: minicart,
 		overlayBtn: minicart.find('.mini-cart_icon'),
 		elemOverlay: minicart.find('.mini-cart_overlay')
+	}, function(){
+		//console.log(minicart.find('.mini-cart_overlay').data('height'));
+		minicart.find('.mini-cart_overlay').data('height', 1000);
 	});
 
 	Evron.repositionTopMenu = (function() {
@@ -250,15 +291,23 @@ jQuery(document).ready(function($){
 			menuWidth = header.width();
 		}
 		
-		topMenu.css({top: posTop, width: menuWidth});
+		//topMenu.css({top: posTop, width: menuWidth});
 
+	}());
+
+	Evron.resizeMenu = (function(){
+		var header = $(".header"),
+			nav = header.find('.nav');
+			winHeight = $(window).height();
+			availableHeight = parseInt(winHeight - header.outerHeight());
+			console.log(availableHeight);
+			nav.css({'max-height': availableHeight+'px'});
+			//console.log(winHeight);
+			//console.log(header.outerHeight());
 	}());
 
 	var featuredCategoriesCarousel = $(".featured-categories").find('.owl-carousel'),
 		mainBanner = $(".main-banner");
-
-
-
 
 
 	mainBanner.owlCarousel({
@@ -301,31 +350,28 @@ jQuery(document).ready(function($){
 
 	$(".promotion-carousel").owlCarousel({
 		lazyLoad: true,
-		margin: 10,
 		center: true,
-		loop: true,
-		autoplay: true,
+		//loop: true,
+		autoplay: false,
 		autoplayHoverPause: true,
 		smartSpeed: 500,
 		fluidSpeed: 500,
 		responsiveRefreshRate: 10,
 		animateIn: true,
 		animateOut: true,
+		dots: true,
 
 		responsive: {
 			0: {
 				stagePadding: 0,
-				items: 2,
+				items: 1,
 				margin: 0,
-				center: false
+				center: true
 			}, 
 			600: {
 				items: 2,
 				center: false,
 				stagePadding: 0
-			},
-			1000: {
-				items: 3
 			}
 		}
 	});
@@ -335,7 +381,14 @@ jQuery(document).ready(function($){
 		searchBox = $(".search_wrapper");
 
 	mobileSearchBtn.on('click', function(){
-		searchBox.toggleClass('s-hide');
+		if (!searchBox.hasClass('.s-hide')) {
+			TweenMax.to(searchBox, 1, {className: "-=s-hide"});
+			searchBox.focus();
+			//searchBox.toggleClass('s-hide');
+		} else {
+			TweenMax.addClass('s-hide');
+			//searchBox.toggleClass('s-hide');
+		}
 	});
 
 	// Make header sticky
