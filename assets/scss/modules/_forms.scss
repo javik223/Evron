@@ -18,7 +18,7 @@ textarea {
 	@include appearance(none);
 	
 	@include placeholder {
-		color: color(black);
+		color: lighten(color(gray-light), 40%);
 	}
 
 	&.short {
@@ -94,6 +94,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .form-list {
 	width: 100%;
+
+	li {
+		float: left;
+		width: 100%;
+	}
 }
 
 .form_fields, .form-list {
@@ -121,4 +126,17 @@ label {
 input[type="checkbox"] {
 	width: auto;
 	float: left;
+}
+input.submit {
+	border-radius: rem-calc(40);
+	margin-top: $padding * 0.5;
+	margin-bottom: $padding * 0.5;
+	width: 100% !important;
+	background-color: lighten(color(primary), 5%);
+	color: color(white);
+	text-align: center;
+
+	&:hover {
+		background-color: darken(color(primary), 5%);
+	}
 }

@@ -42,3 +42,26 @@
 		transform: translateX(-50%);
 	}
 }
+.ced-sociallogin-login {
+	float: left;
+	margin-top: $padding !important;
+	width: 100%;
+}
+hr {
+	color: lighten(color(gray-light), 30%);
+	//border-bottom: rem-calc(1) solid lighten(color(gray-light), 30%);
+}
+.register {
+	@media #{$large-up} {
+		padding-right: $padding * 5;
+		border-right: rem-calc(1) solid lighten(color(gray-light), 50%);;
+	}
+}
+.forgotpasswordlink {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.success-msg {
+	float: left !important;
+}

@@ -782,7 +782,7 @@ em {
   font-weight: 100; }
 
 .text-small {
-  font-size: 90%;
+  font-size: 80%;
   line-height: 1.5; }
 
 .text-serif {
@@ -1082,7 +1082,7 @@ textarea {
   input[type="password"]::-webkit-input-placeholder,
   .input-text::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
-    color: #000; }
+    color: #c8c7c8; }
   input[type="text"]::-moz-placeholder,
   input[type="number"]::-moz-placeholder,
   input[type="submit"]::-moz-placeholder,
@@ -1093,7 +1093,7 @@ textarea {
   input[type="password"]::-moz-placeholder,
   .input-text::-moz-placeholder,
   textarea::-moz-placeholder {
-    color: #000; }
+    color: #c8c7c8; }
   input[type="text"]:-moz-placeholder,
   input[type="number"]:-moz-placeholder,
   input[type="submit"]:-moz-placeholder,
@@ -1104,7 +1104,7 @@ textarea {
   input[type="password"]:-moz-placeholder,
   .input-text:-moz-placeholder,
   textarea:-moz-placeholder {
-    color: #000; }
+    color: #c8c7c8; }
   input[type="text"]:-ms-input-placeholder,
   input[type="number"]:-ms-input-placeholder,
   input[type="submit"]:-ms-input-placeholder,
@@ -1115,7 +1115,7 @@ textarea {
   input[type="password"]:-ms-input-placeholder,
   .input-text:-ms-input-placeholder,
   textarea:-ms-input-placeholder {
-    color: #000; }
+    color: #c8c7c8; }
   input[type="text"].short,
   input[type="number"].short,
   input[type="submit"].short,
@@ -1231,6 +1231,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-list {
   width: 100%; }
+  .form-list li {
+    float: left;
+    width: 100%; }
 
 .form_fields .full input, .form-list .full input {
   width: 100%; }
@@ -1244,6 +1247,17 @@ label {
 input[type="checkbox"] {
   width: auto;
   float: left; }
+
+input.submit {
+  border-radius: 2.5rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  width: 100% !important;
+  background-color: #559e2c;
+  color: #fff;
+  text-align: center; }
+  input.submit:hover {
+    background-color: #3f7620; }
 
 .spinner {
   width: 40px;
@@ -1877,8 +1891,6 @@ p.required {
 
 .validation-advice {
   color: #D52236;
-  padding-top: 0.625rem;
-  margin-top: 0.625rem;
   border-top: 0.0625rem solid #eeedee;
   float: left;
   width: 100%; }
@@ -3518,6 +3530,24 @@ input[type="text"], input[type="password"], input[type="email"], input[type="num
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
+
+.ced-sociallogin-login {
+  float: left;
+  margin-top: 1.25rem !important;
+  width: 100%; }
+
+hr {
+  color: #aeadaf; }
+
+@media only screen and (min-width: 64.063em) {
+  .register {
+    padding-right: 6.25rem;
+    border-right: 0.0625rem solid #e1e1e1; } }
+
+.forgotpasswordlink {
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
 
 html, body {
   width: 100%;

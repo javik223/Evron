@@ -667,8 +667,8 @@ p.required {
 }
 .validation-advice {
 	color: color(secondary);
-	padding-top: $padding * 0.5;
-	margin-top: $padding * 0.5;
+	//padding-top: $padding * 0.2;
+	//margin-top: $padding * 0.2;
 	border-top: rem-calc(1) solid lighten(color(gray-light), 55%);
 	float: left;
 	width: 100%;
