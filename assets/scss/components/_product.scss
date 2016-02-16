@@ -125,7 +125,7 @@
 	&_title {
 		line-height: 1.4;
 		font-weight: 400;
-		font-size: rem-calc(14);
+		font-size: rem-calc(16);
 		padding: $padding * 0.5;
 		letter-spacing: -0.2px;
 
@@ -142,12 +142,12 @@
 		@media #{$medium-up} {
 			padding-left: $padding;
 			padding-right: $padding;
-			font-size: rem-calc(15);
+			font-size: rem-calc(16);
 			line-height: 1.4;
 		}
 
 		@media #{$large-up} {
-			font-size: rem-calc(16);
+			font-size: rem-calc(18);
 			line-height: 1.4;
 		}
 	}

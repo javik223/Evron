@@ -325,13 +325,11 @@ jQuery(document).ready(function($){
 			animateIn: true,
 
 			responsive: {
-				margin: 0,
-				center: false,
-
 				0: {
 					items: 2,
 					margin: 0,
-					center: false
+					center: true,
+					loop: false
 				},
 				600: {
 					items: 3,

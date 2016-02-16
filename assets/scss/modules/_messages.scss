@@ -9,3 +9,13 @@
 	margin-bottom: $padding;
 	font-size: rem-calc(14);
 }
+.success-msg {
+	width: 100%;
+	float: left;
+	background-color: lighten(color(primary), 60%);
+	color: color(primary);
+	padding: $padding * 0.5;
+	font-weight: bold;
+	margin-bottom: $padding;
+	border-bottom: rem-calc(2) solid color(primary);
+}

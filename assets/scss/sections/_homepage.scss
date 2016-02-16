@@ -69,7 +69,6 @@
 		@extend .col;
 		//@extend .s-6-12;
 		//@extend .m-4-12;
-		padding: $padding;
 		@extend .text-center;
 		display: inline-block;
 		text-align: center;
@@ -88,6 +87,7 @@
 		@media #{$large-up} {
 			width: 20%;
 			margin-bottom: $padding;
+			padding: $padding;
 
 			&:nth-child(5n+1) {
 				clear: left;
