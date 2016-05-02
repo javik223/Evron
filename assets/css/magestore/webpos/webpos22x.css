@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
 @font-face {
     font-family: 'Glyphicons Halflings';
     src: url('../../fonts/glyphicons-halflings-regular.eot');
@@ -28,7 +28,7 @@ body{
 .hide{display:none !important;}
 .show{display:block !important;}
 .demo-notice{display:none;}
-.left0px{left:0px !important;z-index:20 !important;}
+.left0px{/*left:0px !important;z-index:20 !important;*/}
 /* S: POS menu */
 #pos_container #menu{
     height:100vh;
@@ -53,24 +53,33 @@ body{
 .pos_menu{ padding: 0px;color: #fff;}
 .pos_menu .menu_item{ position:relative;}
 .pos_menu .menu_item .common{
-    height: 50px;
+    height: 32px;
     margin-bottom: 5px;
 }
 .pos_menu .menu_item .common.account{
     background: url('../../../images/icon/lock.png') no-repeat center center;
-    background-size: 55%;
+    background-size: 45%;
 }
 .pos_menu .menu_item .common.checkout{
     background: url('../../../images/icon/checkout.png') no-repeat center center;
-    background-size: 65%;
+    background-size: 55%;
 }
 .pos_menu .menu_item .common.orders{
     background: url('../../../images/icon/orderlist.png') no-repeat center center;
-    background-size: 85%;
+    background-size: 76%;
 }
 .pos_menu .menu_item .common.settings{
     background: url('../../../images/icon/setting.png') no-repeat center center;
-    background-size: 50%;
+    background-size: 40%;
+}
+
+.pos_menu .menu_item .common.cashdrawer{
+    background: url('../../../images/icon/cashdrawer.png') no-repeat center center;
+    background-size: 70%;
+}
+.pos_menu .menu_item .common.reports{
+    background: url('../../../images/icon/reportIcon.png') no-repeat center center;
+    background-size: 44%;
 }
 .overlay_menu {
     position: fixed;
@@ -79,7 +88,7 @@ body{
     left: 0;
     right: 0;
 }
-.menu_item{ padding: 10px 10px 10px 20px;border-bottom:1px #273042 solid;cursor:pointer; text-align: center;  font-size: 13px;  height: 100px;}
+.menu_item{ padding: 10px 10px 10px 20px;border-bottom:1px #273042 solid;cursor:pointer; text-align: center;  font-size: 12px;  height: 80px;}
 .menu_item .glyphicon{
     font-size: 12px;
     display: inline-block;
@@ -140,12 +149,7 @@ body{
     height: 65px;
     margin: 0;
 }
-.pos_menu .sub_menu .log-item a{
-    //background: url('../../../images/icon/icon-logout.png') no-repeat 0 center;
-    width: 100%;
-}
 
-#category_area{width: 90%;text-align: center;}
 .width10percentage{width:10% !important;}
 ul{list-style:none;}
 .menuactive{background:#04121D;}
@@ -154,7 +158,7 @@ ul{list-style:none;}
 /* E: POS menu */
 /* S: Order list */
 .mainContainer{
-    position: absolute;top: 0px;left: -100vw;width: 100vw;
+    position: absolute;top: 0px;left: -100vw;
     height:100vh;
     z-index:5;
 }
@@ -164,10 +168,12 @@ ul{list-style:none;}
     background: #fff;
 }
 .activeContainer{
-	-webkit-transition:all 0.5s;
-	-moz-transition:all 0.5s;
-	-o-transition:all 0.5s;
-	transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -o-transition:all 0.5s;
+    transition:all 0.5s;
+    width:auto !important;
+    min-width: 90vw;
 }
 /* E: Order list */
 
@@ -311,7 +317,7 @@ ul{list-style:none;}
     position: relative;
     float: left;
     width: 100%;
-	
+
 }
 .col_content_right .cart .shopping-cart #webpos_cart{
     background: #fff;
@@ -321,12 +327,12 @@ ul{list-style:none;}
 }
 
 /* E: POS cart */
-#orders_area{margin:0px;}
+#orders_area{margin:0px;display:none;}
 #orders_area #order-list{padding:0px;}
-.marginLeft5vw{margin-left:100px !important;}
-.hideCategory{margin-left:-58.3% !important;}
+.marginLeft5vw{margin-left:100px;width:auto;}
+.hideCategory{margin-left: -58.2% !important; width:100vw !important;}
 #pos_container #main_container{
-    width:100vw;
+    width:auto;
     height:100%;
     -webkit-transition:all 0.5s;
     -moz-transition:all 0.5s;
@@ -334,6 +340,7 @@ ul{list-style:none;}
     transition:all 0.5s;
     padding:0px;
     margin:0px;
+    margin-left: 100px;
     position:relative;
     border-right: 1px #BEBEB7 solid;
     background-color: #f8f8f8;
@@ -408,6 +415,7 @@ ul{list-style:none;}
     outline: 0;
     background: green;
     box-shadow: 0px 2px 1px rgba(0, 62, 14, 0.89);
+    float: left;
 }
 #mode_status.nowonline{
     background: green;
@@ -443,7 +451,7 @@ ul{list-style:none;}
     height:95%;
     width:100%;
     overflow:auto;
-	
+
 }
 #pos_container #main_container .store_view{
     margin-bottom: 10px;
@@ -474,19 +482,13 @@ ul{list-style:none;}
     position: absolute;
 }
 #continue_select_product{float:left;margin-left:2px;    position: absolute;top: 7px;}
-#bt_checkout{ width:96%;border-radius:7px;background-color:#FF7E00;position:absolute;right:2%;
-	-webkit-transition:all 0.5s;  
-	-moz-transition:all 0.5s;  
-	-o-transition:all 0.5s;  
-	transition:all 0.5s;  
-	bottom: 0;
-}
+#bt_checkout{ width:96%;border-radius:7px;background-color:#FF7E00;position:absolute;right:2%;bottom: 0;}
 #bt_checkout .label{ width:18%;float:left;color:#fff;font-weight:normal;  
--webkit-text-transform: uppercase;
--moz-text-transform: uppercase;
--o-text-transform: uppercase;
-text-transform: uppercase;
-padding: 12px 15px;    font-weight: 600;font-size: 16px;}
+                     -webkit-text-transform: uppercase;
+                     -moz-text-transform: uppercase;
+                     -o-text-transform: uppercase;
+                     text-transform: uppercase;
+                     padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 #bt_checkout .value{ width:82%;float:right;text-align:right;color:#fff;font-weight:normal;font-size: 25px;padding: 6px 15px;}
 #bt_checkout .value div{display: inline;    font-weight: 600;}
 #bt_checkout .glyphicon{
@@ -512,7 +514,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 /*By Crystal - Bar categories*/
 #pos_container #main_container .col_right .top_bar{
     background: #FFA500;
-    padding: 6px 0px 7px 0px;
+    padding: 7px 0px 7px 0px;
     position: relative;
 }
 #pos_container #main_container .col_right .top_bar h2{
@@ -576,7 +578,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     display: block;
 }
 .top_bar .category .dropdown ul#categories_list{
-        border-color: rgba(42, 42, 42, 0);
+    border-color: rgba(42, 42, 42, 0);
     outline: 0;
     outline: thin dotted \9;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.51);
@@ -584,22 +586,21 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     min-width: 250px;
     left: 33%;
     padding: 0;
-    margin-top: 20px;
-    border: 7px solid rgba(0, 0, 0, 0.61);
+    margin-top: 9px;
+    border: 2px solid rgba(0, 0, 0, 0.9);
     border-radius: 6px;
-        position: absolute;
+    position: absolute;
     z-index: 100;
 }
 .top_bar .category .dropdown ul#categories_list:after{
-      content: '';
+    content: '';
     display: inline-block;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    border-bottom: 12px solid rgba(0, 0, 0, 0.61);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(0, 0, 0, 0.61);
     position: absolute;
-    top: -19px;
-    right: 50%;
-	margin-right:-7px;
+    top: -10px;
+    left: 10px;
 }
 .top_bar .category .dropdown button a{
     color: #fff;
@@ -614,14 +615,14 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     text-align: center;
     border-bottom: 1px solid #ccc;
     padding: 10px 5px;
-	float:left;
+    float:left;
 }
 .top_bar .category .dropdown ul li:hover {
     background: #EAEAEA;
     border-radius: 6px;
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
-        color: #262626;
+    color: #262626;
     text-decoration: none;
     background-color: transparent;
 }
@@ -641,34 +642,31 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 
 .dropdown-submenu:hover>.dropdown-menu {
     display: block;
-
     border-color: rgba(42, 42, 42, 0);
     outline: 0;
     outline: thin dotted \9;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.51);
     outline: 0 none;
-
-    width: 250%;
+    width: 200%;
     padding: 5px;
-    margin-top: -35%;
+    margin-top: -30%;
     border-radius: 6px;
-	min-height: 200px;
+    min-height: 200px;
+    border: 2px #000 solid;
 }
 
 .dropdown-submenu .dropdown-menu {
     display: block;
-
     border-color: rgba(42, 42, 42, 0);
     outline: 0;
     outline: thin dotted \9;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.51);
     outline: 0 none;
-
-    width: 250%;
+    width: 200%;
     padding: 5px;
-    margin-top: -35%;
+    margin-top: -30%;
     border-radius: 6px;
-	min-height: 200px;
+    min-height: 200px;
 }
 .dropdown-submenu .dropdown-menu li a{
     padding: 5px;
@@ -685,9 +683,9 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     width: 95%;
 }
 .dropdown-submenu  .dropdown-menu li{
-	float:left;
-	width:25%;
-	overflow: hidden;
+    float:left;
+    width:25%;
+    overflow: hidden;
 }
 .dropdown-submenu>a:after {
     display: block;
@@ -712,9 +710,9 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     width: 95%;
 }
 .dropdown-submenu:hover>.dropdown-menu li{
-	float:left;
-	width:25%;
-	overflow: hidden;
+    float:left;
+    width:25%;
+    overflow: hidden;
 }
 .dropdown-submenu>a:after {
     display: block;
@@ -747,8 +745,8 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 }
 
 #categories_list{
-    width: 120%;
-    left: -10% !important;
+    width: 303%;
+    left: 0% !important;
 }
 /* E: Category style */
 #flush_cache {
@@ -813,7 +811,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 #pos_container #main_container .col_content_right{
     height: 82vh;
     overflow: auto;
-	
+
 }
 #pos_container #main_container .manage-customer{
     background: #fff;
@@ -911,6 +909,8 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     border-radius: 8px;
     outline: 0;
 }
+
+#bt_hold_order:hover,
 #popup-customer button:hover,
 #bt_checkout:hover,
 .product_list .product .product_options ul .product-name h2 button:hover,
@@ -938,7 +938,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     max-height: 350px;
     border-top: 1px solid #ccc;
     margin-top: 10px;
-	
+
 }
 #popup-customer ul li{ border-bottom: 1px solid #ccc;
                        padding: 6px 0px;
@@ -1002,8 +1002,10 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     height: auto !important;
 }
 .product_list .product{
-    margin: 5px 0;
-    padding: 0px 5px;
+    //margin: 5px 0;
+    //padding: 0px 5px;
+    margin: 0;
+    padding: 0;
 }
 .product_list .product .activeitem{
     border: 1px solid #666 !important;
@@ -1011,14 +1013,17 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
 }
 .product_list .product .item:hover{
     border: 1px solid #666;
-    box-shadow:0px 0px 2px #666;
+    //box-shadow:0px 0px 2px #666;
 }
 .product_list .product .item{
-    border: 1px solid #BEBEB7;
-    border-radius: 10px;
+    border-left: 0.5px solid #BEBEB7;
+    border-bottom: 0.5px solid #F1F1F1;
+    //border-radius: 10px;
     margin: 0%;
     display: block;
     background: #fff;
+	width: 100%;
+    padding-bottom: 20px;
 }
 .product_list .product .product_options ul li .prd_options_selected_icon,
 #edit_options_tab ul li .prd_options_selected_icon{
@@ -1033,7 +1038,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     position: fixed;
     top: 100px;
     width: 50%;
-    left: 4%;
+    left: 8.5%;
     border-color: rgba(42, 42, 42, 0);
     outline: 0;
     outline: thin dotted \9;
@@ -1107,7 +1112,7 @@ padding: 12px 15px;    font-weight: 600;font-size: 16px;}
     min-height: 150px;
     overflow: auto;
     padding: 0;
-	
+
 }
 .product_list .product .product_options ul .col .panel-default select[multiple] option{
     padding: 8px 3px;
@@ -1262,12 +1267,13 @@ ul.bundle_childs_values li label span.price .price{
 .product_list .product .item .img-product img{
     display: block;
     margin: 0 auto;
-    width: 120px;
-    height: 105px;
+    //width: 100%;
+    //height: 105px;
+	max-width: 80%;
 }
 .product_list .product .item h2{
     text-align: center;
-    border-top: 1px solid #BEBEB7;
+    //border-top: 1px solid #BEBEB7;
     margin: 0px;
     padding: 3%;
     height: 43px;
@@ -1414,7 +1420,7 @@ ul.bundle_childs_values li label span.price .price{
     max-width: 500px;
     left: 0;
     right: 0;
-    top: 0;
+    top: 6%;
     margin: 0 auto;
     display: none;
 }
@@ -1907,7 +1913,7 @@ ul.bundle_childs_values li label span.price .price{
     padding: 0;
     max-height: 395px;
     overflow: auto;
-	
+
 }
 .shipping .pospanel .panel-body form dl{margin: 0}
 .shipping .pospanel .panel-body ul{padding: 0;margin: 0}
@@ -2115,6 +2121,8 @@ ul.bundle_childs_values li label span.price .price{
     font-size: 15px;
 }
 
+.webpos_popup_loader,
+#holded_orders_section_loader,
 #pending_orders_loader,
 #col_left_firsttime_loader,
 #col_left_loader,
@@ -2240,6 +2248,7 @@ ul.bundle_childs_values li label span.price .price{
     z-index: 9;
     background-color: #fff;
     opacity: 0.5;
+    right:0;
 }
 
 #col_left_loader .loading_message{
@@ -2433,16 +2442,16 @@ ul.bundle_childs_values li label span.price .price{
 
 /* S: Daniel - integrate Store credit - 20150903 */
 #webpos_payment_method_form #customercredit_container #cc_checkout #checkout_cc_input_alert{
-	clear: none !important;
+    clear: none !important;
     margin: 0px 10px;
 }
 #webpos_payment_method_form #customercredit_container #cc_checkout .buttons{
-	clear: none !important;
+    clear: none !important;
 }
 
 #webpos_payment_method_form #customercredit_container #cc_checkout #loading-credit{
-	margin-left: 0px !important;
-	margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
 }
 #webpos_payment_method_form #customercredit_container #cc_checkout #customercredit_cc_success_img{
     margin-top: 15px !important;
@@ -2450,12 +2459,12 @@ ul.bundle_childs_values li label span.price .price{
 #webpos_payment_method_form #customercredit_container #cc_checkout{
     padding: 3px 0px;
     line-height: 45px;
-	min-height:50px;
+    min-height:50px;
 }
 #webpos_payment_method_form #customercredit_container{
     margin: 0px;
     border-bottom: 1px #bbb solid;
-    padding: 7px;
+    padding: 15px;
 }
 /* E: Daniel - integrate Store credit - 20150903 */
 
@@ -2463,21 +2472,22 @@ ul.bundle_childs_values li label span.price .price{
 .product  .item .img-product .prd_sku{
     position: absolute;
     background-color: #888;
-	color:#fff;
+    color:#fff;
     padding: 3px;
     font-size: 0.8em;
     font-style: italic;
     word-break: break-all;
     max-width: 89%;
+    display: none;
 }
 .product .item .img-product{
-	position: relative;
+    position: relative;
 }
 
 .product .item .img-product .prd_price,
 .product .item .img-product .prd_price_bg{
-	position: absolute;
-	padding: 3px;
+    position: absolute;
+    padding: 3px;
     font-size: 0.8em;
     font-style: italic;
     word-break: break-all;
@@ -2487,7 +2497,7 @@ ul.bundle_childs_values li label span.price .price{
 .product .item .img-product .prd_price_bg{
     background-color: #fff;
     min-height: 25px;
-	opacity: 0.7;
+    opacity: 0.7;
 }
 
 .product .item .img-product .prd_price{
@@ -2509,27 +2519,27 @@ ul.bundle_childs_values li label span.price .price{
 #rewardpoints-checkout-payment-method-load #rewardpoints_payment_method,
 #rewardpoints-checkout-payment-method-load #rewardpoints-mask
 {
-	margin-left:15px;
+    margin-left:15px;
 }
 #giftvoucher_container{
-	margin:0px !important;
+    margin:0px !important;
 }
 
 #giftvoucher_container button#giftvoucher_add {
-	background: #FFA500 !important;
+    background: #FFA500 !important;
     color: #FFF;
     padding: 6px 10px;
     border-radius: 4px;
     font-size: 13px;
-	font-family: "Open Sans", "DejaVu Sans", sans-serif;
-	border: none;
-	opacity: 0.9;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    border: none;
+    opacity: 0.9;
 }
 #giftvoucher_container button#giftvoucher_add :hover{
-	opacity: 0.8;
+    opacity: 0.8;
 }
 #giftvoucher_container .giftvoucher_credit label span{
-	float: none;
+    float: none;
 }
 #payment_form_giftvoucher .giftvoucher-description,
 #payment_form_giftvoucher #giftvoucher_message
@@ -2538,41 +2548,42 @@ ul.bundle_childs_values li label span.price .price{
     padding: 0px;
 }
 #payment_form_giftvoucher  li .input-box{
-	width:100% !important;
+    width:100% !important;
 }
 .giftvoucher-discount-code ul li button{
-	border: 0 none;
+    border: 0 none;
     background: transparent;
 }
 .giftvoucher-discount-code ul li button img{
-	margin-top: -5px !important;
+    margin-top: -5px !important;
 }
 #customercredit_container .customercredit label span{
-	float: none;
+    float: none;
 }
 
 #customercredit-payment-form  .edit-credit{
-	float: none;
+    float: none;
 }
 .checkout-credit-use button#checkout-cc-button, button#checkout-cc-button-cancel{
-	border: 0 none;
+    border: 0 none;
     background: transparent;
-	background: #FFA500 !important;
+    background: #FFA500 !important;
     color: #FFF;
     padding: 6px 10px;
     border-radius: 4px;
     font-size: 13px;
-	font-family: "Open Sans", "DejaVu Sans", sans-serif;
-	border: none;
-	opacity: 0.9;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    border: none;
+    opacity: 0.9;
 }
 .checkout-credit-use .checkout_cc_input_alert{
-	margin-top: 0px;
+    margin-top: 0px;
 }
 /* E: Daniel - css for Magestore Gift Card + RP - 20151007 */
 
 #webpos_currency .webpos_currency select{width:80%;}
 #webpos_liststore .webpos_liststore select{width:80%;}
+#webpos_websites .webpos_liststore{margin: 2px;margin-left: 5px;}
 #webpos_quote_message{
     padding: 10px;
     border-bottom: 1px #bbb solid;
@@ -2583,7 +2594,7 @@ ul.bundle_childs_values li label span.price .price{
 
 /* S: Daniel - Show customer address dropdown - 20151118 */
 .customer_address{
-	padding: 10px !important;
+    padding: 10px !important;
 }
 .customer_address .address-select{
     padding: 10px;

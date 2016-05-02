@@ -151,6 +151,12 @@
 .pt-0 {
 	padding-top: 0 !important;
 }
+.pt-20 {
+	padding-top: $padding !important;
+}
+.pt-40 {
+	padding-top: $padding * 2 !important;
+}
 // Remove padding from bottom
 .pb-0 {
 	padding-bottom: 0 !important;
@@ -165,6 +171,41 @@
 }
 .mb-large {
 	margin-bottom: $padding * 2 !important;
+}
+.mb-20 {
+	margin-bottom: $padding !important;
+}
+.mt-large {
+	margin-top: $padding * 2 !important;
+}
+.mt-60 {
+	margin-top: $padding * 3 !important;
+
+	@media #{$medium-up} {
+		margin-top: $padding * 6 !important;
+	}
+}
+.mt-40 {
+	margin-top: $padding * 2 !important;
+
+	@media #{$medium-up} {
+		margin-top: $padding * 4 !important;
+	}
+}
+.mb-60 {
+	margin-bottom: $padding * 3 !important;
+
+	@media #{$medium-up} {
+		margin-bottom: $padding * 6 !important;
+	}
+}
+
+.mb-40 {
+	margin-bottom: $padding * 3 !important;
+
+	@media #{$medium-up} {
+		margin-bottom: $padding * 4 !important;
+	}
 }
 
 // Visibility state on different devices
@@ -198,3 +239,8 @@
 // Miscellaneous useful HTML classes
 .left   { float: left !important; }
 .right  { float: right !important; }
+
+.off-grid {
+	position: absolute;
+	right: 0;
+}

@@ -544,12 +544,116 @@
     text-align: center;
 }
 #holded_orders_detail_content{
-	overflow: auto;
+    overflow: auto;
     height: 94vh;
 }
+#webpos_currency select,
 #webpos_websites select,
 #select-language{
-	width:80%;
+    width:80%;
+}
+#bt_cashin,#bt_place_order{
+    float:left;
+}
+
+#monthly_target{
+    margin: 5px;
+    padding: 5px !important;
+}
+#monthly_target li{
+    padding: 5px !important;
+}
+
+#webpos_edit_payment_methods_form li{
+    padding:0px;
+    margin-bottom: 1px;
+}
+
+#webpos_edit_payment_methods_form{
+    padding: 2px 0px 10px 0px;
+}
+
+#webpos_edit_payment_methods_form li span{
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align:right;
+}
+#webpos_edit_payment_methods_form li input{
+    padding: 5px;
 }
 /**/
 
+/* number board */
+#webpos_number_board_overlay{
+    z-index: 99;
+}
+.webpos_number_board{
+    position: fixed;
+    z-index: 100;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 3px 3px 3px #555;
+    border: 1px #555 solid;
+    border-radius: 5px;
+    margin: 0px;
+    width: 500px;
+    height: 250px;
+    margin-left:-250px;
+    margin-top:-125px;
+    display:none;
+}
+
+.webpos_number_board ul{
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.webpos_number_board ul li{
+    float: left;
+    margin: 3px 0;
+    padding: 0 5px;
+}
+
+.webpos_number_board ul li button{
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.webpos_number_board .clear-number {
+    background: url('../../../images/icon/clear-number.png') no-repeat center center;
+}
+/* number board */
+
+/* S- split ship popup */
+.webpos_popup_area  .bottom_buttons{
+    padding: 5px;
+    text-align: right;
+}
+
+.webpos_popup_area  .bottom_buttons button:hover{
+    opacity:1;
+}
+.webpos_popup_area  .bottom_buttons button{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fff;
+    outline: 0;
+    box-shadow: 0px 3px 5px rgba(97, 20, 3, 0.57);
+    opacity: 0.8;
+}
+
+.webpos_popup_area  .bottom_buttons .btn-back{
+    background: #FF9741;
+    border: 1px solid #F77000;
+}
+
+.webpos_popup_area  .bottom_buttons .btn-next{
+    background: #DC0101;
+    border: 1px solid #D60909;
+}
+/* E - split ship popup */

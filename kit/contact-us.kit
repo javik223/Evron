@@ -1,0 +1,95 @@
+<!--@include includes/header -->
+<div class="container container-gray-light pt-20 pb-20">
+	<div class="row-main">
+		<h1 class="cms-page-header mt-40 mb-20">Contact Us</h1>
+		<div class="pb-20">&nbsp;</div>
+	</div>
+
+	<div class="row section-white">
+		<div class="col">
+			<div class="col l-6-12 contact-physical-store">
+				<img src="/assets/img/evron-building.jpg" alt="Evron Physical Store">
+			</div>
+
+			<div class="col m-8-12 m-offset-2 l-4-12 l-offset-1 mt-pad mt-60 end contact-other-details">
+				<h3 class="c-p">Customer Feedback</h3>
+
+				<h4 class="text-light pb-large end">We love to hear from you. Call or email us if you need to ask a question or provide a comment about our online or physical store.</h4>
+
+				<div class="contact-detail">
+					<span class="beta icon icon-call">&nbsp;</span>
+
+					<h4>
+						<strong>Contact Numbers</strong> <br>08091063333, 08091073333
+					</h4>
+
+				</div>
+
+				<div class="contact-detail">
+					<span class="beta icon icon-mail">&nbsp;</span>
+
+					<h4> <strong>Mail</strong> <br>
+						customerservice@evronfoodstore.com
+					</h4>
+				</div>
+
+				<div class="contact-detail">
+					<span class="beta icon icon-shop">&nbsp;</span>
+
+					<h4> <strong>Physical Store</strong> <br>
+						Block L1 Plot 35, Chevron Drive, <br>
+						Lekki, Lagos.
+					</h4>
+				</div>
+
+				<div class="contact-detail pb-large">
+					<span class="beta icon icon-clock">&nbsp;</span>
+
+					<h4> <strong>Opening Hours</strong> <br>
+						Monday - Saturday: 8:00am - 9:00pm<br>
+						Sunday: 12:00noon - 9:00pm
+					</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="col" id="map">
+		</div>
+	</div>
+</div>
+<script>
+      function initMap() {
+        var myLatLng = {lat: 6.4564083, lng: 3.53036};
+
+        var contentString = '<div id="map-content">'+
+        		'<h4 class="c-p">Evron Food Store</h4>'+
+        		'<p>Block L1 Plot 35, Chevron Drive, <br> Lekki, Lagos.</p>';
+
+        var infowindow = new google.maps.InfoWindow({
+        	content: contentString
+        });
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Evron Food Store'
+        });
+
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Vyhxv0ukw7oQpE0nPpbfYWcYkL5B83g&callback=initMap">
+    </script>
+
+    <div class="pb-large">&nbsp;</div>
+    <div class="pb-large">&nbsp;</div>
+    <div class="pb-large">&nbsp;</div>
+<!--@include includes/footer2 -->

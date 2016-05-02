@@ -43,7 +43,15 @@ jQuery(document).ready(function($){
 					hideDropdown($(this));
 				});
 
-			dropdownElem.children('a').on('click', function(e){
+			dropdownElem.find('>a').on('click', function(e){
+				var $this = $(this).parent();
+
+				if ($this.find('ul').css('display') === 'block') {
+					hideDropdown($this);
+				} else {
+					showDropdown($this);
+				}
+
 				e.preventDefault();
 			});
 		};
@@ -82,11 +90,12 @@ jQuery(document).ready(function($){
 		var showDropdown = function(elem) {
 			var $this = elem;
 			var childElem = $this.find('ul');
+
+			repositionDropdown(childElem);
+			
 			TweenMax.set(childElem, {display: 'block', autoAlpha: 0, xPercent: '-10%'});
 			
 			TweenMax.to(childElem, 0.3, {autoAlpha: 1, xPercent: '0%'});
-			
-			repositionDropdown(childElem);
 		};
 
 		var hideDropdown = function(elem) {
@@ -122,11 +131,16 @@ jQuery(document).ready(function($){
 					} else {
 						hideNav();
 					}
-				})
-				.on('mouseover', function(){
-					showNav();
 				});
 
+				// Enable hover effect on Desktops
+				if (!WURFL.is_mobile) {
+					menuBtn.on('mouseover', function(){
+						showNav();
+					});
+	
+				}
+				
 			navElem.on('mouseleave', function(){
 				hideNav();
 			});
@@ -377,15 +391,20 @@ jQuery(document).ready(function($){
 	// Hide and reveal search box on mobile devices
 	var mobileSearchBtn = $(".mobile-search-icon"),
 		searchBox = $(".search_wrapper");
+		searchBox.isVisible = false;
 
 	mobileSearchBtn.on('click', function(){
-		if (!searchBox.hasClass('.s-hide')) {
-			TweenMax.to(searchBox, 1, {className: "-=s-hide"});
-			searchBox.focus();
-			//searchBox.toggleClass('s-hide');
+		if (searchBox.isVisible === false) {
+			searchBox.isVisible = true;
+			searchBox.removeClass('s-hide');
+			TweenMax.set(searchBox, {display: 'block', autoAlpha: 1});
+			TweenMax.from(searchBox, 2, {autoAlpha: 0, yPercent: '-20%', ease: Expo.easeOut});
+			searchBox.find('#search').focus();
 		} else {
-			TweenMax.addClass('s-hide');
-			//searchBox.toggleClass('s-hide');
+			TweenMax.to(searchBox, 0.4, {autoAlpha: 0, yPercent: '0%', ease: Expo.easeOut, onComplete: function() {
+				searchBox.addClass('s-hide');
+				searchBox.isVisible = false;
+			}});
 		}
 	});
 
@@ -752,4 +771,126 @@ jQuery(document).ready(function($){
 	$(".product").each(function(){
 		$(this).product();
 	});
+
+	function equalizeContactHeight() {
+		// Make contact image and side details same height if on desktop
+		if (WURFL.form_factor === "Desktop" && WURFL.is_mobile === false && $(".contact-other-details").length > 0) { 
+			$(".contact-physical-store").css({height: $(".contact-physical-store").parent().height()});
+		}
+	}
+
+	if ($(".contact-physical-store").length > 0) {
+		$(window).on('resize', equalizeContactHeight );
+	}
+
+	equalizeContactHeight();
+
+	// FAQs Navigation and Accordion
+	// Accordion for Frequently Asked Questions
+	function activateFAQAccordion($elem) {
+		var elem = $elem, 
+			elemHeader = elem.find('h4'),
+			elemContent = elem.find('>div');
+
+		elemHeader.on('click', function(){
+			$(this).next().slideToggle(600);
+			$(this).parent().toggleClass('open');
+
+			// Equalize FAQ Navigation and content Height
+			setTimeout(function(){
+				equalizeFAQHeight();
+			}, 600);
+		});
+	}
+
+	// Initialize FAQ Accordion and TABs
+	var FAQ = $(".faq"),
+		FAQItems = $(".faq .answer li"),
+		FAQTabs = FAQ.find('.answers-tab'),
+		FAQNavElems = FAQ.find("li");
+
+	if (FAQItems.length > 0) {
+		FAQItems.each(function(){
+			var $this = $(this);
+
+			activateFAQAccordion($this);
+		});
+	}
+
+	// Display only one FAQ Tab on load
+	if (FAQ.length > 0) {
+		FAQTabs.hide();
+		FAQTabs.first().show();
+	}
+
+	// Change FAQ Tabs
+	function changeFAQTab($id, $elem) {
+		// Hide all tabs
+		FAQTabs.hide();
+
+		// Show linked tab
+		console.log($id);
+		FAQTabs.parent().find("" + $id).show('slow');
+
+		// Make current Navigation link active
+		FAQNavElems.removeClass('active');
+		$elem.parent().addClass('active');
+
+		// Equalize FAQ Navigation and content Height
+		setTimeout(function(){
+			equalizeFAQHeight();
+		}, 600);
+	}
+
+	FAQNavElems.find('a').each(function(){
+		$(this).on('click', function(e){
+			// Get link and remove the hash symbol from the beginning of the string
+			var id = $(this).attr('href');
+			//id = id.slice(1);
+
+			changeFAQTab(id, $(this));
+
+			e.preventDefault();
+		});
+	});
+
+	var FAQNavInitialHeight = $(".faq .questions").height();
+
+	// Equalize FAQ navigation with content
+	function equalizeFAQHeight() {
+		// Make contact image and side details same height if on desktop
+		if ((WURFL.form_factor === "Desktop" || WURFL.form_factor === "Tablet") && WURFL.is_mobile === false) { 
+			if ($(".faq .answers").outerHeight() > FAQNavInitialHeight) {
+				$(".faq .questions").animate({
+					'height': $(".faq .answers").outerHeight()
+				}, 300);
+			}
+		}
+	}
+
+	if ($(".faq").length > 0) {
+		equalizeFAQHeight();
+	}
+
 });
+
+
+
+var touch = window.ontouchstart || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+
+if (touch) { // remove all :hover stylesheets
+    try { // prevent crash on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) {continue;}
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) {continue;}
+
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
+        }
+    } catch (ex) {}
+}

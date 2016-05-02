@@ -49,6 +49,7 @@
 }
 .footer {
 	margin-top: $padding * 5;
+	clear: both;
 
 	* {
 		font-size: rem-calc(12);

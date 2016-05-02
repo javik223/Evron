@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Evron Food Store</title>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+<div class="container top-bar">
+	<div class="row-main">
+		<div class="left cycle-slideshow s-hide">FREE DELIVERY ON ALL ITEMS ABOVE N5000</div>
+
+		<div class="links text-center right">
+			<a href="/lists" title="Your List"><span class="icon icon-add-list"></span>Lists</a>
+
+			<a href="/track-order" title="Track Your Order"><span class="icon icon-track"></span>Track Order</a>
+
+			<a href="/help" title="Get Help"><span class="icon icon-help"></span>Help</a>
+
+			<a href="tel:+23491073333"><span class="icon icon-call"></span>08091063333, 08091073333</a>
+		</div>
+	</div>
+</div>
+<header class="container header">
+	<div class="row-main">
+		<div class="menu-wrapper"><span class="menu"></span><span class="sm-hide">Menu</span>
+
+			<div class="side-menu nav">
+				<ul class="menu-items">
+					<li><a href="/soup-items" title="Soup Items">Soup Items</a></li>
+					<li class="dropdown"><a href="/meat-fish-and-seafood" title="Meat, Fish and Seafood">Meat, Fish &amp; Seafood</a>
+					
+					<ul>
+						<li class="semi-prominent"><a href="/meat-fish-and-seafood" title="All Meat, Fish &amp; Seafood">All Meat, Fish &amp; Seafood</a></li>
+						<li><a href="/beaf" title="Beaf">Beef</a></li>
+						<li><a href="/goat-meat" title="Goat Meat">Goat Meat</a></li>
+						<li><a href="/fish" title="Fish">Fish</a></li>
+						<li><a href="/seafood" title="Seafood">Seafood</a></li>
+						<li><a href="/poultry" title="Poultry">Poultry</a></li>
+						<li class="menu-image"><img src="/assets/img/meat-menu-item.jpg" alt="Meat Menu Item"></li>
+					</ul>
+
+					</li>
+					<li><a href="/rice-pasta" title="Rice and Pasta">Rice-Pasta</a></li>
+					<li><a href="/tubers-plantain" title="Tubers &amp; Plantain">Tubers &amp; Plantain</a></li>
+					<li><a href="/breakfast-and-baking" title="Breakfast and Baking">Breakfast and Baking</a></li>
+					<li><a href="/Flours &amp; Grains" title="Flours and Grains">Flours and Grains</a></li>
+					<li class="dropdown"><a href="/fruits-and-vegetables" title="Fruits and Vegetables">Fruits and Vegetables</a>
+
+						<ul>
+							<li class="semi-prominent"><a href="/meat-fish-and-seafood" title="All Meat, Fis class="dropdown"h &amp; Seafood">All Fruits & Vegetables</a></li>
+							<li><a href="/beaf" title="Beaf">Fruits</a></li>
+							<li><a href="/goat-meat" title="Goat Meat">Vegetables</a></li>
+							<li class="menu-image"><img src="/assets/img/fruits-menu-item.jpg" alt="Fruits &amp; Vegetables"></li>
+						</ul>
+					</li>
+					<li><a href="/oils" title="Oils">Oils</a></li>
+					<li><a href="/dressings-and-tinned-goods" title="Dressings and Tinned Goods">Dressings and Tinned Goods</a></li>
+					<li><a href="/spices-seasonings" title="Spices, Seasonings and Condiments">Spices, Seasonings &amp; Condiments</a></li>
+					<li class="dropdown"><a href="/shop-recipes" title="Shop Recipes">Shop Recipes</a></li>
+					<li class="semi-prominent"><a href="/value-basket" title="Evron Value Basket">Evron Value Basket</a></li>
+					<li class="promiment"><a href="/wholesale-items" title="Wholesale Items">Wholesale Items</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="mobile-search-icon">
+			<icon class="icon-search"></icon>
+		</div>
+
+		<div class="evron-logo">
+			<img src="/assets/img/evron-logo.svg" alt="Evron Food Store" width="200" class="sm-hide">
+			<img src="/assets/img/evron-logo-symbol.svg" alt="Evron Food Store" width="50" class="l-hide">
+		</div>
+
+		<div class="search_wrapper s-hide">
+			<div class="search">
+				<form action="" method="post">
+					<input type="text" name="search" placeholder="Search all evron foodstore items">
+					<input type="button" name="submit" value="&#xe90f;"></form>		
+			</div>
+		</div>
+
+
+		<div>
+			<div class="right">
+				<div class="account-login left text-right s-hide">
+					<p class="mb-0 overlayBtn">Welcome Sign-in <br> My Account</p>
+					<div class="overlay_wrapper">
+						<div class="overlay">
+							<ul>
+								<li>
+									<h3>Sign-in</h3>
+									<p>View my account</p>
+								</li>
+
+								<li>
+									<h3>Register</h3>
+									<p>Get more out of your Evron Experience</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="mini-cart left">
+					<div class="mini-cart_icon">
+						<div class="icon">
+							<div class="icon icon-cart"></div>
+							<div class="badge">20</div>
+						</div>
+					</div>
+
+					<div class="mini-cart_overlay_wrapper">
+						<div class="mini-cart_overlay">
+							<div class="mini-cart_top">
+								<a class="button checkOutBtn" href="/checkout">Checkout</a>
+								<div class="row summary">
+									<div class="left">Your Cart: <strong>8 Items</strong></div>
+									<div class="right priceTotal">N7,800</div>
+								</div>
+							</div>
+								
+							<ul>
+								<li>
+									<div class="productImage"><img src="/assets/img/meat-fish-and-seafood.jpg" alt="Oils" width="60"></div>
+									<div class="productTitle"><h4>Smoked Chicken</h4><p class="small">Large</p></div>
+									<div class="productQty"><input type="text" class="short with-border" name="qty" size="3"></div>
+									<div class="productPrice"><p><strong>N3000</strong></p><p class="small">N200 each</p></div>
+								</li>
+
+								<li>
+									<div class="productImage"><img src="/assets/img/oils.jpg" alt="Oils" width="60"></div>
+									<div class="productTitle"><h4>Power Oil</h4></div>
+									<div class="productQty"><input type="text" class="short with-border" name="qty" size="3"></div>
+									<div class="productPrice"><p><strong>N3000</strong></p><p class="small">N200 each</p></div>
+								</li>
+
+								<li>
+									<div class="productImage"><img src="/assets/img/rice-and-pasta.jpg" alt="Oils" width="60"></div>
+									<div class="productTitle"><h4>Golden Penny Macaroni (Large)</h4><p class="small">Large</p></div>
+									<div class="productQty"><input type="text" class="short with-border" name="qty" size="3"></div>
+									<div class="productPrice"><p><strong>N3000</strong></p><p class="small">N200 each</p></div>
+								</li>
+
+								<li>
+									<div class="productImage"><img src="/assets/img/fruits-and-vegetables.jpg" alt="Oils" width="60"></div>
+									<div class="productTitle"><h4 class="productTitle">Foreign Pear</h4><p class="small">Large</p></div>
+									<div class="productQty"><input type="text" class="short with-border" name="qty" size="3"></div>
+									<div class="productPrice"><p><strong>N3000</strong></p><p class="small">N200 each</p></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header><div class="container container-gray-light pt-20 pb-20">
+	<div class="row-main">
+		<h1 class="cms-page-header mt-40 mb-20">Frequently Asked Questions</h1>
+		<div class="pb-20">&nbsp;</div>
+	</div>
+
+	<div class="row faq">
+		<ul class="questions">
+			<li><a href="#evron" title="Evron">Evron</a></li>
+			<li><a href="#account" title="Account">Account</a></li>
+			<li><a href="#shopping" title="Shopping">Shopping</a></li>
+			<li><a href="#packaging-and-delivery" title="Packaging and Delivery">Packaging and Delivery</a></li>
+			<li><a href="#payment-and-billing" title="Payment and Billing">Payment and Billing</a></li>
+		</ul>
+
+		<div class="answers mt-pad">
+			<div class="answers-tab" id="evron">
+				<h1 class="heading">Evron Food Store</h1>
+
+				<div class="answer">
+					<ul>
+						<li>
+							<h4>What is Evron Food Store?</h4>
+							<div>
+								<p>Evron Food Store is an online market for fresh food produce and groceries, with a promise of 3-Hour-same-day-delivery, straight to your door.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Why Evron Food Store?</h4>
+							<div>
+								<p>The idea of Evron Food Store was to create an environment with the aura of a traditional market, but clean and hygienic; devoid of the indifferent attitude of the giant industrialized departmental stores.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Do you have a brick and mortar store?</h4>
+							<div>
+								<p>Yes we have a brick and mortar store, located at Chevron Drive, Lekki, Lagos. Our brick and mortar store is a classic blend of your traditional market with a rustic warmth and familiar charm, devoid of the hassles of your regular market.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>What are your in-store opening hours?</h4>
+							<div>
+								<p><strong>Our in-store opening hourse are:</strong></p>
+
+								<p>Monday - Saturday: 8:00am - 9:00pm <br>
+								Sunday: 12noon - 9:00pm</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>I need to talk to someone, how can I contact you?</h4>
+							<div>
+								<p><strong>You can contact us by calling 08091063333, 08091073333</strong></p>
+
+								<p>If you prefer emails, send an email to customerservice@evronfoodstore.com</p>
+
+								<p>For mails, corrsepondence and store visits: <br>
+								Block L1, Plot 35, <br>
+								Chevron Drive, <br>
+								Lekki, Lagos</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="answers-tab" id="account">
+				<h1 class="heading">Account</h1>
+
+				<div class="answer">
+					<ul>
+						<li>
+							<h4>Do I need an account to shop at evronfoodstore.com?</h4>
+							<div>
+								<p>No, you don’t need an Evron Food Store account to shop at <a href="/" title="Evron Food Store">evronfoodstore.com</a>, but getting one gives you an opportunity to track your orders and enjoy exclusive offers and rewards at Evron Food Store.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How Do I Register for an account?</h4>
+							<div>
+								<p><a href="/customer/account/create/" title="Register for an evron account">Click here</a> to register for an account, or go to any page on the site, click on ‘Welcome Sign-in’ or the account icon, then click on ‘Register’.</p>
+
+								<p>You can also signup using your social accounts (Facebook and Twitter).</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How do I login to my account?</h4>
+							<div>
+								<p><a href="/customer/account/login/" title="Log in to your evron account">Click here</a> to login to your account, or go to any page on the site, click on ‘Welcome Sign-in’ or the account icon, then click on ‘Sign-in’.</p>
+
+								<p>You can also login without your password by using your social accounts (Facebook and Twitter).</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How can I view my account summary?</h4>
+							<div>
+								<p>You can view your account summary by signing in and clicking the <a href="/customer/account/" title="Account Dashboard">Account Dashboard</a> link on the sub navigation.</p>
+
+								<p>Here, you will find a list of your recent orders, your account information, addresses and newsletter subscriptions.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How can I view my order history?</h4>
+
+							<div>
+								<p>You can view your order history by signing in and clicking the <a href="sales/order/history/" title="My Orders">‘My Orders’</a> link on the sub navigation.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How do I change my password?</h4>
+							<div>
+								<p>If you are signed in, go to your account, click on Account information and select ‘change password’ before the save button. Input your current password and the new password you require.</p>
+							</div>
+						</li>
+						<li>
+							<h4>How do I reset my password?</h4>
+							<div>
+								<p>If you can’t remember your password and want to reset it, go to the Login page and click <a href="/customer/account/forgotpassword/" title="Forgot your password?">“Forgot your Password?”</a> below the Submit button.</p>
+
+								<p>An email will be sent to you with a direction on how to reset your password.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="answers-tab" id="shopping">
+				<h1 class="heading">Shopping</h1>
+
+				<div class="answer">
+					<ul>
+						<li>
+							<h4>How do I place an order on evronfoodstore.com?</h4>
+							<div>
+								<p>Shopping at evronfoodstore.com is simple. Start by browsing for items, when you have found the item you want, click on the add to cart icon to add them to your shopping cart. When you are done, click on checkout to complete your order.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Can I order by phone?</h4>
+							<div>
+								<p>Yes, we accept telephone orders during our regular business hours, listed on the Contact page. Call 08091063333 or 08091073333. A  friendly Evron customer service representative will take your order and answer any questions you may have.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>I need quick access to some items. How do I search for products?</h4>
+							<div>
+								<p>You can use the navigation at the top of the page to quickly go to the category you want. You can also use the search bar at the top of the page to quickly look for items.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>What happens to my cart if I leave before placing my order?</h4>
+							<div>
+								<p>If you have an Evron account, we'll save everything in your cart. The next time you come back, you can pick up where you left off.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Do item images reflect exactly what I will receive?</h4>
+
+							<div>
+								<p>Most items show actual images of what will be delivered, though some items might vary from what is displayed on the website. This may occur for a variety of reasons including: new/temporary packaging design by the manufacturer, promotional items, same content but different version of an item. Some images may also be for illustration purposes only and may not exactly reflect the colour, size and shape of actual item; this is particularly relevant for fruits, vegetables and other fresh produce.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How are weighed items priced?</h4>
+							<div>
+								<p>Prices of items that need to be weighed (e.g. fruits, vegetables, deli/cold cuts, meat) may be approximate price to enable you make a buying decision. We guarantee that you'll always pay the true price for the actual weight of your products</p>
+							</div>
+						</li>
+						<li>
+							<h4>How are your items priced?</h4>
+							<div>
+								<p>No price for any item is fixed. Depending on market forces, the price of a product may vary from time to time. However, be assured that we will always ensure that you get the best price possible.</p>
+							</div>
+						</li>
+						<li>
+							<h4>What if an item is unavailable?</h4>
+							<div>
+								<p>We go to great lengths to ensure we always have all your shopping needs. If after checking and the item is still unavailable; we will contact you to offer suitable replacements. You are not obliged to accept the replacements and we will dispatch them after receiving confirmation from you.</p>
+							</div>
+						</li>
+						<li>
+							<h4>Do I pay for delivery if items are unavailable?</h4>
+							<div>
+								<p>You are obliged to pay for any unavailable item. If you are not satisfied with the replacement suggested to you by our customer care agent, we will refund the monetary value of the item to your Evron wallet.</p>
+							</div>
+						</li>
+						<li>
+							<h4>How can I view the status of my order?</h4>
+							<div>
+								<p>To find out the status of your order, or view which items you ordered, visit Your Account.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How do I reorder?</h4>
+							<div>
+								<p>We automatically store your past orders and details, so you can reorder quickly. Go to your account, browse to any of your past orders and click on ‘Re-order’ to add those items to your shopping cart.</p>
+							</div>
+						</li>
+						<li>
+							<h4>How can I change or cancel an order?</h4>
+							<div>
+								<p>You can change, reschedule or cancel an order, maximum 15minutes after the order has been made or before the item has been scheduled for delivery.</p>
+
+								<p>To avoid being charged for an order you wish to cancel, we must receive your cancellation before this deadline. For orders cancelled after the deadline, there might a 100% restocking fee of the cost of perishable items, including meat, fish, vegetables and chopped/sliced items. If you miss the deadline, but for some reason still cannot accept your order, please call Evron Food Store Customer Service at 08091063333. </p>
+							</div>
+						</li>
+						<li>
+							<h4>Can I return something if I'm not satisfied?</h4>
+							<div>
+								<p>We take pride in the high quality of our fresh food and packaged goods. If you are dissatisfied with any item in your order, please contact us right away — if the issue is a fault of ours, we will replace it with an acceptable item, or refund 100% of the cost for that item. </p>
+							</div>
+						</li>
+						<li>
+							<h4>How do I get refunds for items you decide to replace?</h4>
+							<div>
+								<p>We will automatically apply any outstanding refund to your Evron Wallet, which you can use to make orders on evronfoodstore.com.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="answers-tab" id="packaging-and-delivery">
+				<h1 class="heading">Packaging and Delivery</h1>
+
+				<div class="answer">
+					<ul>
+						<li>
+							<h4>Who is responsible for assembling my order?</h4>
+							<div>
+								<p>At Evron, the only people that handle your food have special expertise and take proper care in selecting the best option for your order. Whether we are selecting nice fruits and vegetables, cutting steaks, or packing your orders in to boxes, each member of our team takes pride in handling your item with care.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Will you deliver to my area?</h4>
+							<div>
+								<p>We deliver to many or most addresses in Lagos, but due to some reasons, we might not be able to deliver to areas on the outskirts of Lagos. That aside, we are continually expanding our operations to cover more areas in Lagos and environs.</p>
+
+								<p>If we are not able to deliver to your location, we will notify you immediately your order is received.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How much will my delivery cost?</h4>
+							<div>
+								<p>Currently, delivery is free for orders above N15,000 and N500 for orders below N15,000.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How long will my order take to arrive?</h4>
+							<div>
+								<p>For most locations on the Island, we promise a maximum of 3-hours. For other locations in Lagos, we make sure all orders made before 12noon are delivered same day. </p>
+							</div>
+						</li>
+
+						<li>
+							<h4>What if I'm not home to receive my order?</h4>
+							
+							<div>
+								<p>If you think that you may not be home in time to receive your scheduled delivery, or if you miss your delivery, please call Evron Food Store Customer Service at 08091063333.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Can I Pick up my order from your physical store?</h4>
+
+							<div>
+								<p>Yes, anyone in the Evron Food Store area can place an order online for pickup in the store which is located at Block L1 Plot 35, Chevron Drive, Lekki, Lagos.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Can I Return Items?</h4>
+
+							<div>
+								<p>If we deliver an incorrect or damaged item (damage that has been caused by us), we will happily replace the item at no additional cost to you. For us to replace such items, you will need to notify the delivery personnel of your observation at the point of delivery. Once you have taken delivery of your order and signed confirming this, you automatically take ownership of the items and Evron will not be able to accept returns.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>Can I cancel my order?</h4>
+
+							<div>
+								<p>You can change, reschedule or cancel an order at any time before the order cutoff deadline, which is 15minute after your order is made.</p>
+
+								<p>For orders cancelled after the deadline, there might a 100% restocking fee of the cost of perishable items, including meat, fish, vegetables and chopped/sliced items. If you miss the deadline, but for some reason still cannot accept your order, please call Evron Food Store Customer Service at 08091063333.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="answers-tab" id="payment-and-billing">
+				<h1 class="heading">Payment and Billing</h1>
+
+				<div class="answer">
+					<ul>
+						<li>
+							<h4>How do I pay on evronfoodstore.com</h4>
+							<div>
+								<p>We accept the following payment methods:</p>
+
+								<ul>
+									<li>ATM / Debit Cards, including MasterCard and Visa Card</li>
+
+									<li>Pay with Cash (Pay on Delivery)</li>
+
+									<li>Evron Wallet and eGift Cards</li>
+									
+									<li>Bank Transfer</li>		
+								</ul>
+
+								<p>&nbsp;</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>When will I be charged? </h4>
+							<div>
+								<p><strong>For online payment by ATM / Debit Cards:</strong> <br>
+
+								The payment amount is authorised and held by your bank at the time you place your order. You account is subsequently charged when your order is delivered to you</p>
+
+								<p><strong>For Evron Wallet and eGift Card</strong><br>
+								The amount is deducted at the time you place your order.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>What is Evron Wallet?</h4>
+							<div>
+								<p>Evron Wallet is your online account, where you have monetary value to spend on purchase. We may debit or credit your wallet for various reasons including: refunding you for an unavailable item, reconciling the difference between guide and actual price for a weighed item, promotional offers, discounts and rebates. You can also purchase an wallet from the pre-available wallets amounts and get instant additional amounts credited into your wallet.</p>
+							</div>
+						</li>
+
+						<li>
+							<h4>How Do I Get a Refund?</h4>
+							<div>
+								<p>Refunds are credited to your Evron Wallet, which is available to you for future purchases</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Delivery Promises -->
+<div class="row delivery-promises">
+	<div>
+		<span class="icon icon-time">&nbsp;</span> <span>GUARANTEED <br> 3-HOUR DELIVERY EVERY TIME</span>
+	</div>
+
+	<div>
+		<span class="icon icon-box">&nbsp;</span><span>CAREFULLY <br> PROCESSED ORDERS</span>
+	</div>
+
+	<div>
+		<span class="icon icon-delivery">&nbsp;</span><span>SAFE <br> DELIVERY</span>
+	</div>
+</div>
+
+<!-- Payment options and security affirmation -->
+<div class="container pb-large">
+	<div class="row payment-methods mt-pad">
+		<div class="col s-12-12 s-text-center end">
+			<span class="payment-options">Payment Options</span><span><strong>Pay On Delivery</strong></span>
+			<img src="/assets/img/visa-card.png" alt="Visa Card" height="30">&nbsp;<img src="/assets/img/mastercard.png" alt="MasterCard" height="30">
+			<img src="/assets/img/verve-card.png" alt="Verve" height="30">
+
+			<img src="/assets/img/comodo-seal.png" alt="Comodo Seal" class="security-seal">
+		</div>
+	</div>
+</div>
+
+	<div class="container newsletter-social mt-pad">
+		<div class="row">
+			<div class="col m-4-12 l-3-12 ml-text-right s-text-center">
+				<h1 class="omega c-p">Be The first to save!&nbsp;&nbsp;</h1>
+			</div>
+
+			<div class="col m-8-12 l-6-12 pb-large">
+				<div class="newsletter">
+					<form action="" method="post">
+						<input type="text" name="search" placeholder="Enter your email to get updates">
+						<input type="button" name="submit" value="Signup"></form>		
+				</div>
+			</div>
+
+			<div class="col m-12-12 l-3-12 end">
+				<div class="socials sm-text-center l-text-right">
+					<a href="http://twitter.com/" title="Evron Food Store on twitter" class="icon icon-twitter"></a>
+					<a href="http://facebook.com/" title="Evron Food Store on facebook" class="icon icon-facebook"></a>
+					<a href="http://instagram.com/" title="Evron Food Store on Instagram" class="icon icon-instagram"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container footer">
+		<div class="row pbb mt-pad">
+			<div class="col m-12-12 l-8-12 pb-large">
+				<div class="m-12-12 l-3-12 s-text-center m-text-center pb-large">
+					<img src="/assets/img/evron-logo.svg" alt="Evron Food Store Logo" class="logo" width="170">
+				</div>
+
+				<div class="col m-12-12 l-9-12">
+					<div class="col s-6-12 m-8-12">
+						<ul class="col m-6-12">
+							<li><a href="/about-evron" title="About Evron">About Evron</a></li>
+							<li><a href="/the-evron-experience" title="The Evron Experience">The Evron Experience</a></li>
+							<li><a href="/blog" title="Blog">Blog</a></li>
+							<li><a href="/careers" title="Careers">Careers</a></li>
+						</ul>
+
+						<ul class="col m-6-12">
+							<li><a href="/help" title="Help">Help</a></li>
+							<li><a href="/order-tracking" title="Order-tracking">Order Tracking</a></li>
+							<li><a href="/returns-and-refunds" title="Returns and Refunds">Returns / Refunds</a></li>
+							<li><a href="/feedback" title="Feedback">Feedback</a></li>
+							<li><a href="/privacy-and-security" title="Privacy and Security">Privacy &amp; Security</a></li>
+							<li><a href="/terms-of-use" title="Terms of Use">Terms of Use</a></li>
+							<li><a href="/faq" title="Frequently Asked Questions">FAQs</a></li>
+							<li><a href="/return-policy" title="Return Policy">Return Policy</a></li>
+						</ul>
+					</div>
+
+					<div class="col s-6-12 m-4-12">
+						<ul>
+							<li><a href="/product-categories" title="Product Categories">Product Categories</a></li>
+							<li><a href="/" title="Soup Items">Soup Items</a></li>
+							<li><a href="/" title="Meat, Fish &amp; Seafod">Meat Fish and Seafood</a></li>
+							<li><a href="/rice-and-pasta" title="Rice and Pasta">Rice &amp; Pasta</a></li>
+							<li><a href="/" title="Tubers &amp; Platain">Tubers &amp; Plantain</a></li>
+							<li><a href="/" title="Breakfast and Baking">Breakfast and Baking</a></li>
+							<li><a href="/" title="flours and grains">Flours &amp; Grains</a></li>
+							<li><a href="/" title="Fruist and Vegetables">Fruits &amp; Vegetables</a></li>
+							<li><a href="/" title="oils">Oils</a></li>
+							<li><a href="/" title="Dressings &amp; Tinned Goods">Dressings &amp; Tinned Goods</a></li>
+							<li><a href="/" title="Spices, Seasonings &amp; Condiments">Spices, Seasonings &amp; Condiments</a></li>
+							<li><a href="Shop Recipes" title="Shop Recipes">Shop Recipes</a></li>
+							<li><a href="/" title="Value Basket">Value Basket</a></li>
+							<li><a href="Wholesale" title="Wholesale">Wholesale</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col m-12-12 l-4-12 l-text-right s-text-center">	
+				<a class="evron-wallet-icon" href="/evron-wallet"><span class="icon icon-wallet"></span>My Evron Wallet</a>	
+
+				<p>
+					<strong class="c-p">Quick Contact:</strong><br>
+					08091063333, 08091073333
+				</p>
+
+				<p>
+					<strong class="c-p">Store:</strong> Block L1 Plot 35, <br>Chevron Drive, Lekki, Lagos.
+				</p>
+			</div>
+		</div>
+
+		<div class="row mt-pad copyright">
+			<p>&copy; Copyright 2015 Evron Foodstore Limited - All Rights Reserved</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="//wurfl.io/wurfl.js"></script>
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/owl-carousel/owl.carousel.min.js"></script>
+	<script src="/assets/js/TweenMax.min.js"></script>
+	<script src="//cdn.jsdelivr.net/stickynavbar.js/1.1.2/jquery.stickyNavbar.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+	<script src="/assets/js/app.js" async defer></script>
+	</body>
+</html>

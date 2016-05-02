@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);
+/*@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700);*/
 @font-face {
     font-family: 'Glyphicons Halflings';
     src: url('../../fonts/glyphicons-halflings-regular.eot');
@@ -285,7 +285,7 @@ ul{list-style:none;}
 #pos_container .shopping-cart .product{
     border-bottom: 1px solid #BEBEB7;
     margin: 0;
-    background: #fff;
+    background: #fff;display: block;
     cursor:pointer;
     position:relative;
 }
@@ -451,6 +451,8 @@ ul{list-style:none;}
     height:95%;
     width:100%;
     overflow:auto;
+    -webkit-transform: translate3d(0.01, 0.01, 0.01);
+    transform: translate3d(0.01, 0.01, 0.01);
 
 }
 #pos_container #main_container .store_view{
@@ -1004,26 +1006,24 @@ ul{list-style:none;}
 .product_list .product{
     //margin: 5px 0;
     //padding: 0px 5px;
-    margin: 0;
-    padding: 0;
+    padding: 0px;
 }
 .product_list .product .activeitem{
     border: 1px solid #666 !important;
     box-shadow:0px 0px 2px #666 !important;
 }
 .product_list .product .item:hover{
-    border: 1px solid #666;
+    border: 1px solid #119E32;
     //box-shadow:0px 0px 2px #666;
 }
 .product_list .product .item{
-    border-left: 0.5px solid #BEBEB7;
-    border-bottom: 0.5px solid #F1F1F1;
+    border: 1px solid #F1F1F1;
     //border-radius: 10px;
     margin: 0%;
     display: block;
     background: #fff;
 	width: 100%;
-    padding-bottom: 20px;
+    padding: 10px;
 }
 .product_list .product .product_options ul li .prd_options_selected_icon,
 #edit_options_tab ul li .prd_options_selected_icon{
@@ -1267,13 +1267,13 @@ ul.bundle_childs_values li label span.price .price{
 .product_list .product .item .img-product img{
     display: block;
     margin: 0 auto;
-    //width: 100%;
+    width: 100%;
     //height: 105px;
-	max-width: 80%;
+	//max-width: 120px;
 }
 .product_list .product .item h2{
     text-align: center;
-    //border-top: 1px solid #BEBEB7;
+    border-top: 1px solid #BEBEB7;
     margin: 0px;
     padding: 3%;
     height: 43px;
@@ -1344,6 +1344,7 @@ ul.bundle_childs_values li label span.price .price{
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 .customer-sale .form-group ul,
 .discount-webpos .form-discount ul,
 .custom_price_tab .form-custom ul,
@@ -1353,6 +1354,7 @@ ul.bundle_childs_values li label span.price .price{
     padding: 0;
     margin: 0;
 }
+
 .customer-sale .form-group ul li,
 .discount-webpos .form-discount ul li,
 .custom_price_tab .form-custom ul li,
@@ -1361,6 +1363,7 @@ ul.bundle_childs_values li label span.price .price{
     margin: 3px 0;
     padding: 0 5px;
 }
+
 .customer-sale form button,
 .discount-webpos form button,
 .payment .form-cashin button{
@@ -1934,8 +1937,8 @@ ul.bundle_childs_values li label span.price .price{
     -moz-text-transform: uppercase;
     -o-text-transform: uppercase;
 }
-#order_info .shipping_payment_area{height:80vh;overflow:hidden;border-bottom:1px #BEBEB7 solid;}
-#order_info .checkout_buttons_area{height:15vh;overflow:hidden;	 text-align: center;line-height:15vh;}
+#order_info .shipping_payment_area{height:75vh;overflow:hidden;border-bottom:1px #BEBEB7 solid;}
+#order_info .checkout_buttons_area{height:25vh;overflow:hidden;	 text-align: center;line-height:15vh;}
 .pospanel .panel-heading{cursor:pointer;}
 .no-display{display:none;}
 #payment_area .panel-body{ padding: 0px;overflow:auto;	height: 93%; position: relative;}
@@ -2199,14 +2202,27 @@ ul.bundle_childs_values li label span.price .price{
     -khtml-opacity: 0.55;
 }
 #options_after_place_order{
-    margin-top: 40px;
+    margin-top: 0px;
+    height: 10vh;
+    line-height: 10vh;
+}
+#options_after_place_order .option{
+    width: 50%;
+    float: left;
+    height: 10vh;
+    line-height: 10vh;
+    position: relative;
+    padding: 0px 15px;
 }
 #options_after_place_order ul{padding: 0;text-align: left;}
 #options_after_place_order ul li .toggle{
     min-width: 30px;
     width: 50px !important;
-    height: 27px !important;
-    float: right;
+    height: 28px !important;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -14px;
 }
 #options_after_place_order ul li .toggle .toggle-on{
     left: -3px;
@@ -2464,7 +2480,7 @@ ul.bundle_childs_values li label span.price .price{
 #webpos_payment_method_form #customercredit_container{
     margin: 0px;
     border-bottom: 1px #bbb solid;
-    padding: 15px;
+    padding: 14px;
 }
 /* E: Daniel - integrate Store credit - 20150903 */
 
@@ -2599,5 +2615,8 @@ ul.bundle_childs_values li label span.price .price{
 .customer_address .address-select{
     padding: 10px;
     width: 100% !important;
+}
+#items_to_ship_table {
+    padding: 40px;
 }
 /* E: Daniel - Show customer address dropdown - 20151118 */

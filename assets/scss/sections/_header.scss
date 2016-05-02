@@ -127,7 +127,9 @@
 		user-select: none;
 		//margin-top: $padding * 2;
 		//float: left;
+		display: inline-block;
 		margin-right: $padding;
+		z-index: 100000;
 
 		> span {
 			text-transform: uppercase;
@@ -245,15 +247,19 @@
 		> p {
 			color: color(primary);
 			font-weight: bold;
-			font-size: rem-calc(12);
-			line-height: 1.6;
+			font-size: rem-calc(14);
+			line-height: 1.4;
 
 			/* @media #{$large-up} {
 				font-size: inherit;
 			} */
+
+			@media #{$small-only} {
+				font-size: rem-calc(16);
+			}
 		}
 		* {
-			font-size: rem-calc(14);
+			font-size: rem-calc(16);
 			line-height: 1.5;
 		}
 
@@ -355,7 +361,7 @@
 			}
 
 			p {
-				font-size: rem-calc(11);
+				font-size: rem-calc(13);
 				line-height: 1.6;
 				margin-bottom: 0;
 			}
@@ -397,26 +403,32 @@
 		border-radius: rem-calc(40);
 		float: right;
 		//overflow-x: hidden;
-		width: 90%;
-		margin-right: 5%;
+		width: 95%;
+		margin-right: 2.5%;
+		height: rem-calc(40);
 
 		@media #{$medium-up} {
-			width: 100%;
+			width: 90%;
 			margin-right: 0;
 		}
 
 
 		input[type="text"], input[type="search"] {
 			float: left;
+			//width: 85%;
+			// For Algolia, make 100%
 			width: 85%;
 			font-weight: 100;
 			border: none;
+			padding-bottom: rem-calc(8);
 
 			&::placeholder {
 				color: lighten(color(gray-light), 40%);
 			}
 
 			@media #{$large-up} {
+				//width: 90%;
+				// For Algolia, make 100%
 				width: 90%;
 			}
 		}
@@ -458,4 +470,7 @@
   @media #{$large-up} {
   	width: 90% !important;
   }
+}
+@keyframe showBlock {
+	display: block;
 }

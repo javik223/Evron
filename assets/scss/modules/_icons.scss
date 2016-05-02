@@ -23,7 +23,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-shop:before {
+    content: "\e91b";
+}
+.icon-refund:before {
+    content: "\e918";
+}
+.icon-contact:before {
+    content: "\e919";
+}
+.icon-faq:before {
+    content: "\e91a";
+}
 .icon-account:before {
     content: "\e917";
 }
@@ -95,4 +106,7 @@
 }
 .icon-mail:before {
     content: "\e914";
+}
+.icon-clock:before {
+    content: "\e91c";
 }

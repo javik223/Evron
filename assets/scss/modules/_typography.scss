@@ -2,8 +2,8 @@
 // Header elements font settings
 $headers: (
 	h1: (fontSize: 48, lineHeight: 52, mFontSize: 48, mLineHeight: 52, sFontSize: 36, sLineHeight: 40),
-	h2: (fontSize: 36, lineHeight: 43, mFontSize: 30, mLineHeight: 38, sFontSize: 24, sLineHeight: 32),
-	h3: (fontSize: 22, lineHeight: 32, mFontSize: 24, mLineHeight: 32, sFontSize: 18, sLineHeight: 28),
+	h2: (fontSize: 36, lineHeight: 48, mFontSize: 28, mLineHeight: 42, sFontSize: 24, sLineHeight: 36),
+	h3: (fontSize: 22, lineHeight: 32, mFontSize: 20, mLineHeight: 32, sFontSize: 16, sLineHeight: 24),
 	h4: (fontSize: 18, lineHeight: 30, mFontSize: 16, mLineHeight: 30, sFontSize: 14, sLineHeight: 24),
 	h5: (fontSize: 14, lineHeight: 20, mFontSize: 12, mLineHeight: 16, sFontSize: 12, sLineHeight: 16),
 );
@@ -13,18 +13,18 @@ $headers: (
 	#{$elem} {
 		font-size: rem-calc(m($prop, sFontSize));
 		line-height: rem-calc(m($prop, sLineHeight));
-		margin-bottom: rem-calc(m($prop, sLineHeight)/2) !important;
+		margin-bottom: rem-calc(m($prop, sLineHeight)/2);
 
 		@media #{$medium-up} {
 			font-size: rem-calc(m($prop, mFontSize));
 			line-height: rem-calc(m($prop, mLineHeight));
-			margin-bottom: rem-calc(m($prop, mLineHeight)/2) !important;
+			margin-bottom: rem-calc(m($prop, mLineHeight)/2);
 		}
 
 		@media #{$large-up} {
 			font-size: rem-calc(m($prop, fontSize));
 			line-height: rem-calc(m($prop, lineHeight));
-			margin-bottom: rem-calc(m($prop, lineHeight)/2) !important;
+			margin-bottom: rem-calc(m($prop, lineHeight)/2);
 		}
 	}
 }
@@ -61,19 +61,18 @@ em {
 .text-center {
 	text-align: center;
 }
+.text-right {
+	text-align: right;
+}
 .text-light {
 	font-weight: $font-weight-light;
 }
 .text-small {
 	font-size: 80%;
-	line-height: 1.5;
+	line-height: 1.6;
 }
 .text-serif {
 	font-family: $font-family-serif;
-
-	* {
-		font-family: $font-family-serif;
-	}
 }
 .text-sans {
 	font-family: $font-family-sans-serif;
@@ -145,6 +144,12 @@ em {
 // Change text color to primary color
 .c-p {
 	color: color(primary);
+}
+.c-g {
+	color: lighten(color(gray-light), 20%);
+}
+.c-t {
+	color: color(tetiary);
 }
 
 //Link styles
