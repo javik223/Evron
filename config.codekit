@@ -600,6 +600,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/evron-experience-image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.30717e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/evron-experience-image.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/evron-experience-image.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/evron-help-center.jpg": {
 		"fileType": 16384,
 		"ignore": 1,
@@ -3286,6 +3297,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/evron-experience.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/evron-experience.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/faq.html": {
 		"fileType": 8192,
 		"ignore": 1,
@@ -3346,6 +3366,15 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/kit\/contact-us.kit",
 		"outputAbbreviatedPath": "\/contact-us.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1
+		},
+	"\/kit\/evron-experience.kit": {
+		"fileType": 2048,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/kit\/evron-experience.kit",
+		"outputAbbreviatedPath": "\/evron-experience.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1
 		},

@@ -3879,4 +3879,25 @@ a, button, .icon {
   -ms-touch-action: none;
       touch-action: none; }
 
+.evron-experience_hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/img/evron-experience-image.jpg?1462191813');
+  background-size: cover;
+  background-position: center center;
+  position: relative; }
+  .evron-experience_hero * {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase; }
+  .evron-experience_hero_container {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%); }
+  .evron-experience_hero h3, .evron-experience_hero .gamma, .evron-experience_hero .my-account .page-title, .my-account .evron-experience_hero .page-title, .evron-experience_hero .my-account .box-head h2, .my-account .box-head .evron-experience_hero h2, .evron-experience_hero .my-account .box-head .beta, .my-account .box-head .evron-experience_hero .beta, .evron-experience_hero .my-account .box-head .cms-page-header, .my-account .box-head .evron-experience_hero .cms-page-header, .evron-experience_hero .my-account .box-head .faq .answers .heading, .my-account .box-head .faq .answers .evron-experience_hero .heading, .evron-experience_hero .faq .answers .my-account .box-head .heading, .faq .answers .my-account .box-head .evron-experience_hero .heading, .evron-experience_hero .my-account .legend, .my-account .evron-experience_hero .legend {
+    font-weight: 100; }
+
 /*# sourceMappingURL=app.css.map */
